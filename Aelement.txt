@@ -1,0 +1,10 @@
+<li><a>Wellcome: ${ssNameAdmin}</a></li>
+									<li><a href="Logoutcontroller">Logout</a></li>
+
+
+
+
+<a href="productController?id=${display.getIdProduct()}&subCategory=${display.getIdSubCategory()}">
+                                                    <img
+                                                         src="${pageContext.request.contextPath}${display.getUrl()}"
+                                                        class="img-fluid blur-up lazyload bg-img" alt=""></a>
