@@ -53,15 +53,16 @@
 			xhttp.onreadystatechange = function() {// trang thai luon la 4 (4: hoàn hành xử lý và đợi gửi lại phía client)
 				if (xhttp.readyState == 4) { // lay gia tri tu trang result.jsp
 					var data = xhttp.responseText;
-					document.getElementById("searchresult").innerHTML = data;
+					document.getElementById("ResultSearch").innerHTML = data;
 				}
 			}
 
 			// gui yeu cau Sever/ Ajax reuqest
 			xhttp.open("POST", url, true);
 			xhttp.send();
-		} else {
-			document.getElementById("searchresult").innerHTML = "";
+		}else {
+			
+			document.getElementById("ResultSearch").innerHTML= "";
 		}
 	}
 </script>
@@ -547,7 +548,7 @@
 									<ul>
 										<li class="onhover-div mobile-search">
 											<div>
-												<img src="../assets/images/icon/search.png"
+												<img src="${pageContext.request.contextPath}/View/assets/images/icon/search.png"
 													onclick="openSearch()" class="img-fluid blur-up lazyload"
 													alt=""> <i class="ti-search" onclick="openSearch()"></i>
 											</div>
@@ -559,9 +560,9 @@
 														<div class="container">
 															<div class="row">
 																<div class="col-xl-12">
-																	<form>
+																	<form name="myform">
 																		<div class="form-group">
-																			<input type="text" class="form-control"
+																			<input type="text" name="searchh" onkeyup="Search()" class="form-control"
 																				id="exampleInputPassword1"
 																				placeholder="Search a Product">
 																		</div>
@@ -569,16 +570,22 @@
 																			<i class="fa fa-search"></i>
 																		</button>
 																	</form>
+																	
 																</div>
+																<div class="container"  id="ResultSearch"></div>
 															</div>
 														</div>
 													</div>
 												</div>
+												
 											</div>
+											
+											
 										</li>
+										
 										<li class="onhover-div mobile-setting">
 											<div>
-												<img src="../assets/images/icon/setting.png"
+												<img src="${pageContext.request.contextPath}/View/assets/images/icon/setting.png"
 													class="img-fluid blur-up lazyload" alt=""> <i
 													class="ti-settings"></i>
 											</div>
@@ -603,14 +610,10 @@
 													src="${pageContext.request.contextPath}/View/assets/images/icon/cart.png"
 													class="img-fluid blur-up lazyload" alt=""> <i
 													class="ti-shopping-cart"></i>
-												
-											</div> 
-											
-											
-							
-								<span class="cart_qty_cls">0</span>
-							
-											
+
+											</div> <span class="cart_qty_cls">0</span>
+
+
 											<ul class="show-div shopping-cart">
 
 
@@ -624,6 +627,7 @@
 											</ul>
 										</li>
 									</ul>
+									<div class="container"  id="ResultSearch"></div>
 								</div>
 							</div>
 						</div>

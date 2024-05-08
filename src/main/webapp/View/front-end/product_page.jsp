@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -50,6 +50,40 @@
 <!-- Theme css -->
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/View/assets/css/style.css">
+<script type="text/javascript">
+
+function addToCart(idProduct) {
+	var xhttp;
+	 
+	 
+
+		var url = "CartController?id=" + idProduct;
+		if (window.XMLHttpRequest) {
+			//code for chrome, firefox, IE7+, Opera, Safari 
+			xhttp = new XMLHttpRequest();
+		} else {
+			// code for IE6, IE5
+			xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+
+		//để theo dõi thay đổi trạng thái của XMLHttpRequest.
+		xhttp.onreadystatechange = function() {// trang thai luon la 4 (4: hoàn hành xử lý và đợi gửi lại phía client)
+			if (xhttp.readyState == 4) { // lay gia tri tu trang result.jsp
+				var data = xhttp.responseText;
+				document.getElementById("cartProduct").innerHTML = data;
+			}
+		}
+
+		// gui yeu cau Sever/ Ajax reuqest
+		xhttp.open("POST", url, true);
+		xhttp.send();
+	 
+}
+
+
+
+</script>
+
 
 </head>
 
@@ -236,14 +270,14 @@
 								</div>
 							</div>
 							<div class="product-buttons">
-							<!-- javascript:void(0) -->
-							
-								<a href="CartController?id=${productDetail.getId()}" class="btn btn-solid" id="cartEffect"
+								<!-- javascript:void(0) href="CartController?id=${productDetail.getId()}" -->
+
+								<a onclick="addToCart(${productDetail.getId()})"
+									class="btn btn-solid" id="cartEffect"
 									class="btn btn-solid hover-solid btn-animation"><i
 									class="fa fa-shopping-cart me-1" aria-hidden="true"></i> add to
-									cart</a> 
-									<a href="#"><i
-									class="fa fa-bookmark fz-16 me-2" aria-hidden="true"></i>wishlist</a>
+									cart</a> <a href="#"><i class="fa fa-bookmark fz-16 me-2"
+									aria-hidden="true"></i>wishlist</a>
 							</div>
 							<div class="product-count">
 								<ul>
@@ -426,270 +460,59 @@
 				</div>
 			</div>
 			<div class="row search-product">
-				<div class="col-xl-2 col-md-4 col-6">
-					<div class="product-box">
-						<div class="img-wrapper">
-							<div class="front">
-								<a href="#"><img
-									src="${pageContext.request.contextPath}/View/assets/images/pro3/33.jpg"
-									class="img-fluid blur-up lazyload bg-img" alt=""></a>
+		
+				<c:forEach items="${ListProductRalate}" var="list">
+				
+					<div class="col-xl-2 col-md-4 col-6">
+						<div class="product-box">
+							<div class="img-wrapper">
+								<div class="front">
+									<a href="#"><img
+										src="${pageContext.request.contextPath}/View${list.value.get(0)}"
+										class="img-fluid blur-up lazyload bg-img" alt=""></a>
+								</div>
+								<div class="back">
+									<a href="#"><img
+										src="${pageContext.request.contextPath}/View${list.value.get(1)}"
+										class="img-fluid blur-up lazyload bg-img" alt=""></a>
+								</div>
+								<div class="cart-info cart-wrap">
+									<button data-bs-toggle="modal" onclick="addToCart(${list.key.getId()})" data-bs-target="#addtocart"
+										title="Add to cart">
+										<i class="ti-shopping-cart"></i>
+									</button>
+									<a href="javascript:void(0)" title="Add to Wishlist"><i
+										class="ti-heart" aria-hidden="true"></i></a> <a href="#"
+										data-bs-toggle="modal" data-bs-target="#quick-view"
+										title="Quick View"><i class="ti-search" aria-hidden="true"></i></a>
+									<a href="compare.html" title="Compare"><i class="ti-reload"
+										aria-hidden="true"></i></a>
+								</div>
 							</div>
-							<div class="back">
-								<a href="#"><img
-									src="${pageContext.request.contextPath}/View/assets/images/pro3/34.jpg"
-									class="img-fluid blur-up lazyload bg-img" alt=""></a>
+							<div class="product-detail">
+								<div class="rating">
+									<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+										class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+										class="fa fa-star"></i>
+								</div>
+								<a href="product-page(no-sidebar).html">
+									<h6>${list.key.getName()}</h6>
+								</a>
+								<h4>$${list.key.getPrice()}</h4>
+								<ul class="color-variant">
+									<li class="bg-light0"></li>
+									<li class="bg-light1"></li>
+									<li class="bg-light2"></li>
+								</ul>
 							</div>
-							<div class="cart-info cart-wrap">
-								<button data-bs-toggle="modal" data-bs-target="#addtocart"
-									title="Add to cart">
-									<i class="ti-shopping-cart"></i>
-								</button>
-								<a href="javascript:void(0)" title="Add to Wishlist"><i
-									class="ti-heart" aria-hidden="true"></i></a> <a href="#"
-									data-bs-toggle="modal" data-bs-target="#quick-view"
-									title="Quick View"><i class="ti-search" aria-hidden="true"></i></a>
-								<a href="compare.html" title="Compare"><i class="ti-reload"
-									aria-hidden="true"></i></a>
-							</div>
-						</div>
-						<div class="product-detail">
-							<div class="rating">
-								<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-									class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-									class="fa fa-star"></i>
-							</div>
-							<a href="product-page(no-sidebar).html">
-								<h6>Slim Fit Cotton Shirt</h6>
-							</a>
-							<h4>$500.00</h4>
-							<ul class="color-variant">
-								<li class="bg-light0"></li>
-								<li class="bg-light1"></li>
-								<li class="bg-light2"></li>
-							</ul>
 						</div>
 					</div>
-				</div>
-				<div class="col-xl-2 col-md-4 col-6">
-					<div class="product-box">
-						<div class="img-wrapper">
-							<div class="front">
-								<a href="#"><img
-									src="${pageContext.request.contextPath}/View/assets/images/pro3/1.jpg"
-									class="img-fluid blur-up lazyload bg-img" alt=""></a>
-							</div>
-							<div class="back">
-								<a href="#"><img
-									src="${pageContext.request.contextPath}/View/assets/images/pro3/2.jpg"
-									class="img-fluid blur-up lazyload bg-img" alt=""></a>
-							</div>
-							<div class="cart-info cart-wrap">
-								<button data-bs-toggle="modal" data-bs-target="#addtocart"
-									title="Add to cart">
-									<i class="ti-shopping-cart"></i>
-								</button>
-								<a href="javascript:void(0)" title="Add to Wishlist"><i
-									class="ti-heart" aria-hidden="true"></i></a> <a href="#"
-									data-bs-toggle="modal" data-bs-target="#quick-view"
-									title="Quick View"><i class="ti-search" aria-hidden="true"></i></a>
-								<a href="compare.html" title="Compare"><i class="ti-reload"
-									aria-hidden="true"></i></a>
-							</div>
-						</div>
-						<div class="product-detail">
-							<div class="rating">
-								<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-									class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-									class="fa fa-star"></i>
-							</div>
-							<a href="product-page(no-sidebar).html">
-								<h6>Slim Fit Cotton Shirt</h6>
-							</a>
-							<h4>$500.00</h4>
-							<ul class="color-variant">
-								<li class="bg-light0"></li>
-								<li class="bg-light1"></li>
-								<li class="bg-light2"></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-2 col-md-4 col-6">
-					<div class="product-box">
-						<div class="img-wrapper">
-							<div class="front">
-								<a href="#"><img
-									src="${pageContext.request.contextPath}/View/assets/images/pro3/27.jpg"
-									class="img-fluid blur-up lazyload bg-img" alt=""></a>
-							</div>
-							<div class="back">
-								<a href="#"><img
-									src="${pageContext.request.contextPath}/View/assets/images/pro3/28.jpg"
-									class="img-fluid blur-up lazyload bg-img" alt=""></a>
-							</div>
-							<div class="cart-info cart-wrap">
-								<button data-bs-toggle="modal" data-bs-target="#addtocart"
-									title="Add to cart">
-									<i class="ti-shopping-cart"></i>
-								</button>
-								<a href="javascript:void(0)" title="Add to Wishlist"><i
-									class="ti-heart" aria-hidden="true"></i></a> <a href="#"
-									data-bs-toggle="modal" data-bs-target="#quick-view"
-									title="Quick View"><i class="ti-search" aria-hidden="true"></i></a>
-								<a href="compare.html" title="Compare"><i class="ti-reload"
-									aria-hidden="true"></i></a>
-							</div>
-						</div>
-						<div class="product-detail">
-							<div class="rating">
-								<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-									class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-									class="fa fa-star"></i>
-							</div>
-							<a href="product-page(no-sidebar).html">
-								<h6>Slim Fit Cotton Shirt</h6>
-							</a>
-							<h4>$500.00</h4>
-							<ul class="color-variant">
-								<li class="bg-light0"></li>
-								<li class="bg-light1"></li>
-								<li class="bg-light2"></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-2 col-md-4 col-6">
-					<div class="product-box">
-						<div class="img-wrapper">
-							<div class="front">
-								<a href="#"><img
-									src="${pageContext.request.contextPath}/View/assets/images/pro3/35.jpg"
-									class="img-fluid blur-up lazyload bg-img" alt=""></a>
-							</div>
-							<div class="back">
-								<a href="#"><img
-									src="${pageContext.request.contextPath}/View/assets/images/pro3/36.jpg"
-									class="img-fluid blur-up lazyload bg-img" alt=""></a>
-							</div>
-							<div class="cart-info cart-wrap">
-								<button data-bs-toggle="modal" data-bs-target="#addtocart"
-									title="Add to cart">
-									<i class="ti-shopping-cart"></i>
-								</button>
-								<a href="javascript:void(0)" title="Add to Wishlist"><i
-									class="ti-heart" aria-hidden="true"></i></a> <a href="#"
-									data-bs-toggle="modal" data-bs-target="#quick-view"
-									title="Quick View"><i class="ti-search" aria-hidden="true"></i></a>
-								<a href="compare.html" title="Compare"><i class="ti-reload"
-									aria-hidden="true"></i></a>
-							</div>
-						</div>
-						<div class="product-detail">
-							<div class="rating">
-								<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-									class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-									class="fa fa-star"></i>
-							</div>
-							<a href="product-page(no-sidebar).html">
-								<h6>Slim Fit Cotton Shirt</h6>
-							</a>
-							<h4>$500.00</h4>
-							<ul class="color-variant">
-								<li class="bg-light0"></li>
-								<li class="bg-light1"></li>
-								<li class="bg-light2"></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-2 col-md-4 col-6">
-					<div class="product-box">
-						<div class="img-wrapper">
-							<div class="front">
-								<a href="#"><img
-									src="${pageContext.request.contextPath}/View/assets/images/pro3/2.jpg"
-									class="img-fluid blur-up lazyload bg-img" alt=""></a>
-							</div>
-							<div class="back">
-								<a href="#"><img
-									src="${pageContext.request.contextPath}/View/assets/images/pro3/1.jpg"
-									class="img-fluid blur-up lazyload bg-img" alt=""></a>
-							</div>
-							<div class="cart-info cart-wrap">
-								<button data-bs-toggle="modal" data-bs-target="#addtocart"
-									title="Add to cart">
-									<i class="ti-shopping-cart"></i>
-								</button>
-								<a href="javascript:void(0)" title="Add to Wishlist"><i
-									class="ti-heart" aria-hidden="true"></i></a> <a href="#"
-									data-bs-toggle="modal" data-bs-target="#quick-view"
-									title="Quick View"><i class="ti-search" aria-hidden="true"></i></a>
-								<a href="compare.html" title="Compare"><i class="ti-reload"
-									aria-hidden="true"></i></a>
-							</div>
-						</div>
-						<div class="product-detail">
-							<div class="rating">
-								<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-									class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-									class="fa fa-star"></i>
-							</div>
-							<a href="product-page(no-sidebar).html">
-								<h6>Slim Fit Cotton Shirt</h6>
-							</a>
-							<h4>$500.00</h4>
-							<ul class="color-variant">
-								<li class="bg-light0"></li>
-								<li class="bg-light1"></li>
-								<li class="bg-light2"></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-2 col-md-4 col-6">
-					<div class="product-box">
-						<div class="img-wrapper">
-							<div class="front">
-								<a href="#"><img
-									src="${pageContext.request.contextPath}/View/assets/images/pro3/28.jpg"
-									class="img-fluid blur-up lazyload bg-img" alt=""></a>
-							</div>
-							<div class="back">
-								<a href="#"><img
-									src="${pageContext.request.contextPath}/View/assets/images/pro3/27.jpg"
-									class="img-fluid blur-up lazyload bg-img" alt=""></a>
-							</div>
-							<div class="cart-info cart-wrap">
-								<button data-bs-toggle="modal" data-bs-target="#addtocart"
-									title="Add to cart">
-									<i class="ti-shopping-cart"></i>
-								</button>
-								<a href="javascript:void(0)" title="Add to Wishlist"><i
-									class="ti-heart" aria-hidden="true"></i></a> <a href="#"
-									data-bs-toggle="modal" data-bs-target="#quick-view"
-									title="Quick View"><i class="ti-search" aria-hidden="true"></i></a>
-								<a href="compare.html" title="Compare"><i class="ti-reload"
-									aria-hidden="true"></i></a>
-							</div>
-						</div>
-						<div class="product-detail">
-							<div class="rating">
-								<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-									class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-									class="fa fa-star"></i>
-							</div>
-							<a href="product-page(no-sidebar).html">
-								<h6>Slim Fit Cotton Shirt</h6>
-							</a>
-							<h4>$500.00</h4>
-							<ul class="color-variant">
-								<li class="bg-light0"></li>
-								<li class="bg-light1"></li>
-								<li class="bg-light2"></li>
-							</ul>
-						</div>
-					</div>
-				</div>
+				
+				</c:forEach>
+				
+				
+
+
 			</div>
 		</div>
 	</section>

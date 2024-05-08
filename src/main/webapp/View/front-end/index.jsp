@@ -237,7 +237,7 @@ function addToCart(idProduct) {
 											class="fa fa-star"></i> <i class="fa fa-star"></i> <i
 											class="fa fa-star"></i>
 									</div>
-									<a href="product-page(no-sidebar).html">
+									<a href="ProductController?id=${list.key.getId()}">
 										<h6>${list.key.getName()}</h6>
 									</a>
 									<h4>$${list.key.getPrice()}</h4>
@@ -311,7 +311,7 @@ function addToCart(idProduct) {
 														class="img-fluid blur-up lazyload bg-img" alt=""></a>
 												</div>
 												<div class="cart-info cart-wrap">
-													<button data-bs-toggle="modal" data-bs-target="#addtocart"
+													<button data-bs-toggle="modal" onclick="addToCart(${listSn.key.getId()})" data-bs-target="#addtocart"
 														title="Add to cart">
 														<i class="ti-shopping-cart"></i>
 													</button>
@@ -330,7 +330,7 @@ function addToCart(idProduct) {
 														class="fa fa-star"></i> <i class="fa fa-star"></i> <i
 														class="fa fa-star"></i>
 												</div>
-												<a href="product-page(no-sidebar).html">
+												<a href="ProductController?id=${listSn.key.getId()}">
 													<h6>${listSn.key.getName()}</h6>
 												</a>
 												<h4>$${listSn.key.getPrice()}</h4>
@@ -367,7 +367,7 @@ function addToCart(idProduct) {
 														class="img-fluid blur-up lazyload bg-img" alt=""></a>
 												</div>
 												<div class="cart-info cart-wrap">
-													<button data-bs-toggle="modal" data-bs-target="#addtocart"
+													<button data-bs-toggle="modal" onclick="addToCart(${listW.key.getId()})" data-bs-target="#addtocart"
 														title="Add to cart">
 														<i class="ti-shopping-cart"></i>
 													</button>
@@ -386,7 +386,7 @@ function addToCart(idProduct) {
 														class="fa fa-star"></i> <i class="fa fa-star"></i> <i
 														class="fa fa-star"></i>
 												</div>
-												<a href="product-page(no-sidebar).html">
+												<a href="ProductController?id=${listW.key.getId()}">
 													<h6>${listW.key.getName()}</h6>
 												</a>
 												<h4>$${listW.key.getPrice()}</h4>
@@ -422,7 +422,7 @@ function addToCart(idProduct) {
 														class="img-fluid blur-up lazyload bg-img" alt=""></a>
 												</div>
 												<div class="cart-info cart-wrap">
-													<button data-bs-toggle="modal" data-bs-target="#addtocart"
+													<button data-bs-toggle="modal" onclick="addToCart(${lCap.key.getId()})" data-bs-target="#addtocart"
 														title="Add to cart">
 														<i class="ti-shopping-cart"></i>
 													</button>
@@ -441,7 +441,7 @@ function addToCart(idProduct) {
 														class="fa fa-star"></i> <i class="fa fa-star"></i> <i
 														class="fa fa-star"></i>
 												</div>
-												<a href="product-page(no-sidebar).html">
+												<a href="ProductController?id=${lCap.key.getId()}">
 													<h6>${lCap.key.getName()}</h6>
 												</a>
 												<h4>$${lCap.key.getPrice()}</h4>

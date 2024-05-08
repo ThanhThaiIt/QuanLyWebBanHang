@@ -16,48 +16,70 @@ import javax.servlet.http.HttpServletResponse;
 
 import BEAN.Product;
 import DAO.ProductDAO;
+import DAO.ProductPageDAO;
 import DB.DBConnection;
 
- 
 @WebServlet("/ProductController")
 public class ProductController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
- 
-    public ProductController() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
- 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public ProductController() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		Connection connection = DBConnection.Connection();
 		String idString = request.getParameter("id");
 		int idInt = Integer.parseInt(idString);
-		
+		int cateProduct =0;
 		try {
 			Product product = ProductDAO.getProductByID(idInt);
 			 
-			if (product!=null) {
+			
+			
+			//get cateid
+			List<Product> allProduct = ProductPageDAO.getAllProuct();
+			
+			for (int i = 0; i < allProduct.size(); i++) {
+				if (allProduct.get(i).getId()==idInt) {
+					cateProduct =	 allProduct.get(i).getIdSubCategory();
+					break;
+				}
+			}
+			
+			// list ralate product
+						List<Product> listProduct = ProductPageDAO.getRelateProduct(cateProduct,idInt);
+						Map<Product, List<String>> listWithImageMap = new HashMap<Product, List<String>>();
+			if (listProduct != null) {
+				for (int i = 0; i < listProduct.size(); i++) {
+					List<String> listImage = ProductDAO.getImageById(listProduct.get(i).getId());
+
+					listWithImageMap.put(listProduct.get(i), listImage);
+				}
+			}
+
+			if (product != null && listWithImageMap !=null) {
 				List<String> listImage = ProductDAO.getImageById(idInt);
-				
+
 				request.setAttribute("productDetail", product);
 				request.setAttribute("productimage", listImage);
+				request.setAttribute("ListProductRalate", listWithImageMap);
 				RequestDispatcher rd = request.getRequestDispatcher("View/front-end/product_page.jsp");
 				rd.forward(request, response);
 			}
-			
+
 		} catch (SQLException e) {
-			 
+
 			e.printStackTrace();
 		}
-		
-		
+
 	}
 
- 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 	}
 
 }
