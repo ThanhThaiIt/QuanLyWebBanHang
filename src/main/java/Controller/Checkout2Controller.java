@@ -82,7 +82,16 @@ public class Checkout2Controller extends HttpServlet {
 				WOrderDetail wOrderDetail = new WOrderDetail(nameProduct, total, total);
 				WPaymentServices wPaymentServices = new WPaymentServices();
 				String approvalLink = wPaymentServices.authorizePayment(wOrderDetail);
-
+				
+				
+				// Start insert cart into database "Transaction"
+				List<Cart> cart_List = (List<Cart>) session.getAttribute("listProduct");
+				
+				Transaction transaction = new Transaction(idUser, fName, lName, emailString, total, addr, townCity, countryStr,
+						phone, paymentMethod, statusOder, day);
+				
+				CheckoutDAO.InserTransaction(transaction,cart_List);
+				// end insert into database "Transaction"
 				response.sendRedirect(approvalLink);
 				
 			} catch (PayPalRESTException e) {
@@ -94,7 +103,8 @@ public class Checkout2Controller extends HttpServlet {
 		if (paymentMethod==0) {
 			Transaction transaction = new Transaction(idUser, fName, lName, emailString, total, addr, townCity, countryStr,
 					phone, paymentMethod, statusOder, day);
-			CheckoutDAO.InserTransaction(transaction);
+			List<Cart> cart_List = (List<Cart>) session.getAttribute("listProduct");
+			CheckoutDAO.InserTransaction(transaction,cart_List);
 			RequestDispatcher rd = request.getRequestDispatcher("View/front-end/checkout.jsp");
 			rd.forward(request, response);
 		}

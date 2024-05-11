@@ -2,13 +2,18 @@ package DAO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.mysql.cj.x.protobuf.MysqlxCrud.Order;
 
+import BEAN.Cart;
+import BEAN.Oders;
 import BEAN.Transaction;
 import BEAN.User;
 import DB.DBConnection;
@@ -56,15 +61,17 @@ public class CheckoutDAO {
 //		return true;
 //	}
 	
-	public static void InserTransaction(Transaction transaction) //dangkydangnhapdungtruefalse
+	public static void InserTransaction(Transaction transaction, List<Cart> cart) //dangkydangnhapdungtruefalse
 	{// thuc hien theo buoc huong dan torng slide
+		int key =0;
 		Connection connection = DBConnection.Connection();
 		PreparedStatement preparedStatement = null;
 		
 		String sqlString = "insert into transaction(idUser,firstName,lastName,email,total,address,town_city,state_county,phone,payment_method,status_order,create_at) values (?,?,?,?,?,?,?,?,?,?,?,?)";
 		
 		try {
-			preparedStatement = connection.prepareStatement(sqlString);
+			// get generate key(id của transaction)
+			preparedStatement = connection.prepareStatement(sqlString,PreparedStatement.RETURN_GENERATED_KEYS);
 			
 			
 			 
@@ -84,7 +91,37 @@ public class CheckoutDAO {
 			
 			preparedStatement.executeUpdate();
 			
-		 
+			
+			//+ ket(IdTransaction)
+			ResultSet rs = preparedStatement.getGeneratedKeys();
+
+			if (rs.next()) {
+			    key = rs.getInt(1);
+			}//+
+			
+			String sqlTransaction ="insert into oders(idTransaction,idProduct,qlt,price,price_old,sale,warranty,idSize,idColor,url_order,create_at) values (?,?,?,?,?,?,?,?,?,?,?)";
+			preparedStatement = connection.prepareStatement(sqlTransaction);
+			for (int i = 0; i < cart.size(); i++) {
+				
+				preparedStatement.setInt(1, key);
+				preparedStatement.setInt(2, cart.get(i).getId());
+				preparedStatement.setInt(3, cart.get(i).getQuantity());
+				preparedStatement.setFloat(4, cart.get(i).getPrice());
+				preparedStatement.setFloat(5, cart.get(i).getPrice());
+				preparedStatement.setInt(6, 0);
+				preparedStatement.setInt(7, 0);
+				preparedStatement.setInt(8, 1);
+				preparedStatement.setInt(9, 1);
+				preparedStatement.setString(10, "null");
+				preparedStatement.setString(11, "2023-07-05");
+				
+				
+				preparedStatement.executeUpdate();
+				
+			}
+			
+			
+			
 			preparedStatement.close();
 			
 		} catch (SQLException e) {

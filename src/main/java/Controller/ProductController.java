@@ -35,6 +35,8 @@ public class ProductController extends HttpServlet {
 		int idInt = Integer.parseInt(idString);
 		int cateProduct =0;
 		try {
+			
+			//get product by id
 			Product product = ProductDAO.getProductByID(idInt);
 			 
 			
