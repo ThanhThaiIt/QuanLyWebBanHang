@@ -50,14 +50,37 @@
 <!-- Theme css -->
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/View/assets/css/style.css">
+
+
 <script type="text/javascript">
+var size=-1;
+var color=-1;
+function choiceSize(id){
+	size = id;
+}
+
+function choiceColor(ids){
+	color = ids;
+}
 
 function addToCart(idProduct) {
 	var xhttp;
+	if(size == -1){
+		alert('yeu cầu sai');
+		return;
+	}
+	
+	if(color == -1){
+		alert('Color sai');
+		return;
+	}
+	
+	
+	//var ulElement = document.getElementById("sizee");
 	 
-	 
-
-		var url = "CartController?id=" + idProduct;
+		//var idSize = ulElement.dataset.id;  
+		//var url = "CartController?id=" + idProduct;
+		var url = "CartController?id=" + idProduct + "&size=" + size + "&color="+color;
 		if (window.XMLHttpRequest) {
 			//code for chrome, firefox, IE7+, Opera, Safari 
 			xhttp = new XMLHttpRequest();
@@ -79,6 +102,18 @@ function addToCart(idProduct) {
 		xhttp.send();
 	 
 }
+
+function loadDoc(data) { 
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+	if (this.readyState == 4 && this.status == 200) {
+	  document.getElementById("demo").innerHTML =
+	  this.responseText;
+	}
+	};
+	xhttp.open("GET", "CartController?data1="+data, true);
+	xhttp.send();
+	}
 
 
 
@@ -212,9 +247,9 @@ function addToCart(idProduct) {
 									off</span>
 							</h3>
 							<ul class="color-variant">
-								<li class="bg-light0 active"></li>
-								<li class="bg-light1"></li>
-								<li class="bg-light2"></li>
+								<c:forEach items="${listColor}" var="list">
+									<li onclick="choiceColor(${list.getId()})" class="${list.getTitle()} "></li>
+								</c:forEach>
 							</ul>
 							<div id="selectSize"
 								class="addeffect-section product-description border-product">
@@ -245,11 +280,12 @@ function addToCart(idProduct) {
 								</div>
 								<h6 class="error-message">please select size</h6>
 								<div class="size-box">
-									<ul>
-										<li><a href="javascript:void(0)">s</a></li>
-										<li><a href="javascript:void(0)">m</a></li>
-										<li><a href="javascript:void(0)">l</a></li>
-										<li><a href="javascript:void(0)">xl</a></li>
+									<ul id="sizee" data-id="${list.getId()}">
+
+										<c:forEach items="${listSize}" var="list">
+											<li><a onclick="choiceSize(${list.getId()})">${list.getTitle()}</a></li>
+
+										</c:forEach>
 									</ul>
 								</div>
 								<h6 class="product-title">quantity</h6>
@@ -460,9 +496,9 @@ function addToCart(idProduct) {
 				</div>
 			</div>
 			<div class="row search-product">
-		
+
 				<c:forEach items="${ListProductRalate}" var="list">
-				
+
 					<div class="col-xl-2 col-md-4 col-6">
 						<div class="product-box">
 							<div class="img-wrapper">
@@ -477,8 +513,9 @@ function addToCart(idProduct) {
 										class="img-fluid blur-up lazyload bg-img" alt=""></a>
 								</div>
 								<div class="cart-info cart-wrap">
-									<button data-bs-toggle="modal" onclick="addToCart(${list.key.getId()})" data-bs-target="#addtocart"
-										title="Add to cart">
+									<button data-bs-toggle="modal"
+										onclick="addToCart(${list.key.getId()})"
+										data-bs-target="#addtocart" title="Add to cart">
 										<i class="ti-shopping-cart"></i>
 									</button>
 									<a href="javascript:void(0)" title="Add to Wishlist"><i
@@ -507,10 +544,10 @@ function addToCart(idProduct) {
 							</div>
 						</div>
 					</div>
-				
+
 				</c:forEach>
-				
-				
+
+
 
 
 			</div>

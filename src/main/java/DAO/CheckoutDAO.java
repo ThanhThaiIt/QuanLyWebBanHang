@@ -92,7 +92,7 @@ public class CheckoutDAO {
 			preparedStatement.executeUpdate();
 			
 			
-			//+ ket(IdTransaction)
+			//+ key(IdTransaction)
 			ResultSet rs = preparedStatement.getGeneratedKeys();
 
 			if (rs.next()) {
@@ -110,8 +110,8 @@ public class CheckoutDAO {
 				preparedStatement.setFloat(5, cart.get(i).getPrice());
 				preparedStatement.setInt(6, 0);
 				preparedStatement.setInt(7, 0);
-				preparedStatement.setInt(8, 1);
-				preparedStatement.setInt(9, 1);
+				preparedStatement.setInt(8, cart.get(i).getSize());
+				preparedStatement.setInt(9, cart.get(i).getColor());
 				preparedStatement.setString(10, "null");
 				preparedStatement.setString(11, "2023-07-05");
 				

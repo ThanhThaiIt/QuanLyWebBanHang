@@ -616,7 +616,7 @@
 
 											<ul class="show-div shopping-cart">
 
-
+												<!-- Hiển thị cart ajax -->
 												<div id="cartProduct"></div>
 												<li>
 													<div class="buttons">

@@ -37,11 +37,13 @@ public class CartController extends HttpServlet {
 		try (PrintWriter out = response.getWriter()) {
 
 			int id = Integer.parseInt(request.getParameter("id"));
+			int size = Integer.parseInt(request.getParameter("size"));
+			int colors = Integer.parseInt(request.getParameter("color"));
 			// lấy sản phảm dựa vào hình ảnh
 			Product product = CardDAO.getProductByID(id);
 			String images = CardDAO.getImageById(id);
 			// lấy một product từ database, chuyển nó về thành cart
-			Cart cart = new Cart(product, images);
+			Cart cart = new Cart(product, images,size,colors);
 			int check = 0;
 			HttpSession session = request.getSession();
 			List<Cart> cart_List = (List<Cart>) session.getAttribute("listProduct");

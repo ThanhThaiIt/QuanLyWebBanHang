@@ -241,11 +241,11 @@ function addToCart(idProduct) {
 										<h6>${list.key.getName()}</h6>
 									</a>
 									<h4>$${list.key.getPrice()}</h4>
-									<ul class="color-variant">
+									<!--  ul class="color-variant">
 										<li class="bg-light0"></li>
 										<li class="bg-light1"></li>
 										<li class="bg-light2"></li>
-									</ul>
+									</ul-->
 								</div>
 							</div>
 						</c:forEach>
@@ -334,11 +334,11 @@ function addToCart(idProduct) {
 													<h6>${listSn.key.getName()}</h6>
 												</a>
 												<h4>$${listSn.key.getPrice()}</h4>
-												<ul class="color-variant">
+												<!--  ul class="color-variant">
 													<li class="bg-light0"></li>
 													<li class="bg-light1"></li>
 													<li class="bg-light2"></li>
-												</ul>
+												</ul-->
 											</div>
 										</div>
 									</c:forEach>
@@ -390,11 +390,11 @@ function addToCart(idProduct) {
 													<h6>${listW.key.getName()}</h6>
 												</a>
 												<h4>$${listW.key.getPrice()}</h4>
-												<ul class="color-variant">
+												<!--  ul class="color-variant">
 													<li class="bg-light0"></li>
 													<li class="bg-light1"></li>
 													<li class="bg-light2"></li>
-												</ul>
+												</ul-->
 											</div>
 										</div>
 
@@ -445,11 +445,11 @@ function addToCart(idProduct) {
 													<h6>${lCap.key.getName()}</h6>
 												</a>
 												<h4>$${lCap.key.getPrice()}</h4>
-												<ul class="color-variant">
+												<!--  ul class="color-variant">
 													<li class="bg-light0"></li>
 													<li class="bg-light1"></li>
 													<li class="bg-light2"></li>
-												</ul>
+												</ul-->
 											</div>
 										</div>
 

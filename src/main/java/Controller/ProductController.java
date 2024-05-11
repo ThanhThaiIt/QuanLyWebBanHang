@@ -14,7 +14,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import BEAN.Color;
 import BEAN.Product;
+import BEAN.Size;
 import DAO.ProductDAO;
 import DAO.ProductPageDAO;
 import DB.DBConnection;
@@ -61,13 +63,22 @@ public class ProductController extends HttpServlet {
 					listWithImageMap.put(listProduct.get(i), listImage);
 				}
 			}
+			
+			// get size
+			List<Integer> lSizeint = ProductPageDAO.getListSizeProduct(idInt);
+			List<Size> lSize = ProductPageDAO.mapSize(lSizeint);
+			
+			// get color
+			List<Color> lColor = ProductPageDAO.getListColor(idInt);
 
-			if (product != null && listWithImageMap !=null) {
+			if (product != null && listWithImageMap !=null && lSize !=null && lColor !=null) {
 				List<String> listImage = ProductDAO.getImageById(idInt);
 
 				request.setAttribute("productDetail", product);
 				request.setAttribute("productimage", listImage);
 				request.setAttribute("ListProductRalate", listWithImageMap);
+				request.setAttribute("listSize", lSize);
+				request.setAttribute("listColor", lColor);
 				RequestDispatcher rd = request.getRequestDispatcher("View/front-end/product_page.jsp");
 				rd.forward(request, response);
 			}
