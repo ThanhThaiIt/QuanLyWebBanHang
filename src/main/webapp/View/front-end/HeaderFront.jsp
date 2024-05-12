@@ -138,19 +138,20 @@
 											</div>
 										</div>
 										<ul id="sub-menu" class="sm pixelstrap sm-vertical">
-											<li><a href="#">clothing</a>
+											<li><a href="#">Fashion</a>
 												<ul class="mega-menu clothing-menu">
 													<li>
 														<div class="row m-0">
 															<div class="col-xl-4">
 																<div class="link-section">
-																	<h5>women's fashion</h5>
+																	<h5>Category</h5>
 																	<ul>
-																		<li><a href="#">dresses</a></li>
-																		<li><a href="#">skirts</a></li>
-																		<li><a href="#">westarn wear</a></li>
-																		<li><a href="#">ethic wear</a></li>
-																		<li><a href="#">sport wear</a></li>
+																	<li><a href="CategoryPageController?cate=0">All fashion products</a></li>
+																		<li><a href="CategoryPageController">Shirts</a></li>
+																		<li><a href="CategoryPageController">Bottom</a></li>
+																		<li><a href="CategoryPageController">Sneaker</a></li>
+																		<li><a href="CategoryPageController">Watch</a></li>
+																		<li><a href="CategoryPageController">Cap</a></li>
 																	</ul>
 																	<h5>men's fashion</h5>
 																	<ul>
