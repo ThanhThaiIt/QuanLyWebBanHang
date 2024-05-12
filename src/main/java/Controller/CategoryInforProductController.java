@@ -32,24 +32,44 @@ public class CategoryInforProductController extends HttpServlet {
 
  
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//Show product byid
-		int idProductt = Integer.parseInt(request.getParameter("idProduct"));
-		
-		try {
-			Product product = CategoryPageDAO.getProductByID(idProductt);
+		String pageidstr = request.getParameter("pageid");
+		if (pageidstr != null) {
+			int pageid = Integer.parseInt(pageidstr);
+			int count = 3;
 			
-			if (product != null) {
+			
+			if (pageid == 1)
+			{
 				
-				List<String> listImage = CategoryPageDAO.getImageById(idProductt);
-
-				request.setAttribute("productDetail", product);
-				request.setAttribute("productimage", listImage);
-				RequestDispatcher rd = request.getRequestDispatcher("View/front-end/product_page.jsp");
-				rd.forward(request, response);
 			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			else 
+			{
+				pageid = pageid -1;
+				pageid = pageid * count +1;
+			}
+			
+			List<Product> list = CategoryPageDAO.DisplayAllproduct(pageid, count);
+			
+			int sumrow = CategoryPageDAO.Countrow();
+			int maxpageid= 0;
+			
+			if ((sumrow/count)%2==0)
+			{
+				maxpageid = (sumrow/count);
+			}
+			else
+			{
+				maxpageid = (sumrow/count)+1;
+			}
+			
+			request.setAttribute("maxpageid",maxpageid);
+			
+			request.setAttribute("listgrammarguidelinemanage",list);
+			
+			request.setAttribute("numberpage",Integer.parseInt(pageidstr));
+			
+			RequestDispatcher rd = request.getRequestDispatcher("View/front-end/CategoryPage.jsp");
+			rd.forward(request,response);
 		}
 	}
 

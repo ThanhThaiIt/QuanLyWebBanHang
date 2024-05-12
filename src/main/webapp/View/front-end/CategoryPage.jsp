@@ -451,21 +451,74 @@
 													<div class="col-xl-6 col-md-6 col-sm-12">
 														<nav aria-label="Page navigation">
 															<ul class="pagination">
-																<li class="page-item"><a class="page-link" href="#"
-																	aria-label="Previous"><span aria-hidden="true"><i
+															  <c:if test="${numberpage == 1}">
+																<li class="page-item">
+																<a class="page-link" href="#"  aria-label="Previous">
+																<span aria-hidden="true"><i
 																			class="fa fa-chevron-left" aria-hidden="true"></i></span> <span
 																		class="sr-only">Previous</span></a></li>
+																	</c:if>	
+																	
+																	<c:if test="${numberpage != 1}">
+																<li class="page-item">
+																<a class="page-link" href="CategoryPageController?pageid=${numberpage-1}"  aria-label="Previous">
+																<span aria-hidden="true"><i
+																			class="fa fa-chevron-left" aria-hidden="true"></i></span> <span
+																		class="sr-only">Previous</span></a></li>
+																	</c:if>	
+																	<!--  
+																	<c:if test="${numberpage == 2}">
+																<li class="page-item">
+																<a class="page-link" href="CategoryPageController?pageid=1"  aria-label="Previous">
+																<span aria-hidden="true"><i
+																			class="fa fa-chevron-left" aria-hidden="true"></i></span> <span
+																		class="sr-only">Previous</span></a></li>
+																	</c:if>	
+																	-->
+																	<c:forEach begin="1" end="${maxpageid}" var="num">	
 																<li class="page-item active"><a class="page-link"
-																	href="#">1</a></li>
-																<li class="page-item"><a class="page-link" href="#">2</a></li>
-																<li class="page-item"><a class="page-link" href="#">3</a></li>
+																	href="CategoryPageController?pageid=${num}">${num}</a></li>
+																</c:forEach>
+																
+																<c:if test="${numberpage == maxpageid}">
 																<li class="page-item"><a class="page-link" href="#"
 																	aria-label="Next"><span aria-hidden="true"><i
 																			class="fa fa-chevron-right" aria-hidden="true"></i></span> <span
 																		class="sr-only">Next</span></a></li>
+																	</c:if>	
+																	
+																	<c:if test="${numberpage != maxpageid}">
+																<li class="page-item"><a class="page-link" href="CategoryPageController?pageid=${numberpage+1}"
+																	aria-label="Next"><span aria-hidden="true"><i
+																			class="fa fa-chevron-right" aria-hidden="true"></i></span> <span
+																		class="sr-only">Next</span></a></li>
+																	</c:if>		 
+																<!--		
+																		<c:if test="${numberpage == 1}">
+													   <li class = "active"><a href = "#">Prev</a></li>
+													  
+													   <li><a href = "CategoryPageController?pageid=${numberpage+1}">Next</a></li>
+												   </c:if>
+												   
+												   <c:if test="${numberpage == maxpageid}">
+													   <li><a href = "CategoryPageController?pageid=${numberpage-1}">Prev</a></li>
+													  
+													   <li class = "active"><a href ="#">Next</a></li>
+												   </c:if>
+												   
+												   <c:if test="${numberpage > 1 && numberpage < maxpageid}">
+													   <li><a href = "CategoryPageController?pageid=${numberpage-1}">Prev</a></li>
+													   
+													   <li><a href = "CategoryPageController?pageid=${numberpage+1}">Next</a></li>
+												   </c:if>		
+												   -->
+												   
+												   
 															</ul>
 														</nav>
 													</div>
+													
+													
 													<div class="col-xl-6 col-md-6 col-sm-12">
 														<div class="product-search-count-bottom">
 															<h5>Showing Products 1-24 of 10 Result</h5>

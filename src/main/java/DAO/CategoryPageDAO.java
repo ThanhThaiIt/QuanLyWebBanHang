@@ -132,4 +132,81 @@ public class CategoryPageDAO {
 		}
 		return product;
 	}
+	public static List<Product> DisplayAllproduct ( int start, int count)
+	{	Connection connection = DBConnection.Connection();
+		List<Product> list = new ArrayList<Product>();
+		
+		String sql = "select * from product limit "+(start)+", "+count+"";
+		try 
+		{
+			PreparedStatement ptmt = connection.prepareStatement(sql);
+			
+			ResultSet resultset = ptmt.executeQuery();
+			
+			if (resultset.isBeforeFirst())
+			{
+				while (resultset.next())
+				{
+					
+					
+					int id = resultset.getInt("id");
+					int idSubCategory = resultset.getInt("idSubCategory");
+					int idSupplier = resultset.getInt("idSupplier");
+					String nameString = resultset.getString("name");
+					int guarantee = resultset.getInt("guarantee");
+					float price = resultset.getFloat("price");
+					int discount = resultset.getInt("discount");
+					int quantity = resultset.getInt("quantity");
+					String video = resultset.getString("video");
+					String description = resultset.getString("description");
+					int idStatus = resultset.getInt("idStatus");
+					int idType = resultset.getInt("idType");
+					String create_at = resultset.getString("create_at");
+
+					Product product = new Product(id, idSubCategory, idSupplier, nameString, guarantee, price, discount,
+							quantity, video, description, idStatus, idType, create_at);
+					
+					list.add(product);
+				}
+			}
+			
+			
+		} 
+		catch (SQLException e) 
+		{
+			e.getMessage();
+		}
+				
+		return list;
+	}
+	
+	//dem bang do co bao nhieu hang
+	public static int Countrow()
+	{
+		Connection connection = DBConnection.Connection();
+		int count = 0;
+		
+		
+		String sql = "select count(*) from product";
+		
+		try 
+		{
+			PreparedStatement ptmt = connection.prepareStatement(sql);
+			
+			ResultSet rs = ptmt.executeQuery();
+			
+			rs.next();
+			
+			count = rs.getInt(1);
+			
+				
+		} 
+		catch (SQLException e) 
+		{
+			
+			e.printStackTrace();
+		}
+		
+		return count;
+	}
 }

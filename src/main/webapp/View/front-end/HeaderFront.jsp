@@ -65,6 +65,18 @@
 			document.getElementById("ResultSearch").innerHTML= "";
 		}
 	}
+	
+	
+	function redirectToCategoryPage() {
+	    var url = "CategoryPageController"; // Đường dẫn đến servlet hoặc trang
+	    var params = { pageid: 1, cate: 0 }; // Các tham số muốn truyền
+
+	    // Xây dựng URL với các tham số
+	    url += "?" + Object.keys(params).map(key => key + "=" + encodeURIComponent(params[key])).join("&");
+
+	    // Chuyển hướng trang đến URL mới
+	    window.location.href = url;
+	}
 </script>
 </head>
 <body>
@@ -145,8 +157,10 @@
 															<div class="col-xl-4">
 																<div class="link-section">
 																	<h5>Category</h5>
-																	<ul>
-																	<li><a href="CategoryPageController?cate=0">All fashion products</a></li>
+																	<ul> <!-- CategoryPageController?cate=0&pageid=1 onclick="redirectToCategoryPages()" -->
+																	<li><a href="CategoryPageController?pageid=1&idcate=0" >All fashion products</a></li>
+																	
+																	
 																		<li><a href="CategoryPageController">Shirts</a></li>
 																		<li><a href="CategoryPageController">Bottom</a></li>
 																		<li><a href="CategoryPageController">Sneaker</a></li>
