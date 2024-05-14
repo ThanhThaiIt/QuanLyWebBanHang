@@ -18,7 +18,7 @@ public class CategoryPageDAO {
 		Connection connection = DBConnection.Connection();
 		PreparedStatement preparedStatement = null;
 
-		String sqlString = "SELECT * FROM product";
+		String sqlString = "SELECT * FROM product where idStatus !=1";
 		List<Product> list = new ArrayList<Product>();
 		try {
 			preparedStatement = connection.prepareStatement(sqlString);
@@ -62,7 +62,7 @@ public class CategoryPageDAO {
 		Connection connection = DBConnection.Connection();// mo ket noi
 		Statement stmt = connection.createStatement();
 		List<String> list = new ArrayList<String>();
-		String sqlString = "SELECT * FROM images WHERE idProduct ='" + idImage + "'";
+		String sqlString = "SELECT * FROM images WHERE idProduct =" + idImage + "";
 		ResultSet rs = stmt.executeQuery(sqlString);
 		rs.next();
 		String url1 = rs.getString("url");
@@ -136,7 +136,7 @@ public class CategoryPageDAO {
 	{	Connection connection = DBConnection.Connection();
 		List<Product> list = new ArrayList<Product>();
 		
-		String sql = "select * from product limit "+(start)+", "+count+"";
+		String sql = "select * from product where idStatus !=1 limit "+(start)+", "+count+"";
 		try 
 		{
 			PreparedStatement ptmt = connection.prepareStatement(sql);
@@ -187,7 +187,7 @@ public class CategoryPageDAO {
 		int count = 0;
 		
 		
-		String sql = "select count(*) from product";
+		String sql = "select count(*) from product where idStatus !=1";
 		
 		try 
 		{

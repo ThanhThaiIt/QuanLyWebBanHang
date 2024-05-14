@@ -66,7 +66,7 @@ public class ProductPageDAO {
 		PreparedStatement preparedStatement = null;
 
 		//String sqlString = "SELECT * FROM product WHERE idSubCategory='"+cateID+"'";
-		String sqlString = "SELECT * FROM product WHERE idSubCategory='" + cateID + "' AND id != '" + idProduct + "'";
+		String sqlString = "SELECT * FROM product WHERE idStatus != 1 AND idSubCategory='" + cateID + "' AND id != '" + idProduct + "'";
 		List<Product> list = new ArrayList<Product>();
 		try {
 			preparedStatement = connection.prepareStatement(sqlString);

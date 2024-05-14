@@ -64,7 +64,7 @@ public class ProductDAO {
 		Connection connection = DBConnection.Connection();// mo ket noi
 		Statement stmt = connection.createStatement();
 		List<String> list = new ArrayList<String>();
-		String sqlString = "SELECT * FROM images WHERE idProduct ='" + idImage + "'";
+		String sqlString = "SELECT * FROM images WHERE idProduct =" + idImage + "";
 		ResultSet rs = stmt.executeQuery(sqlString);
 		rs.next();
 		String url1 = rs.getString("url");
