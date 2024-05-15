@@ -6,9 +6,9 @@ public class DBConnection {
 		{
 			Connection conn = null;
 			//declare the information to connect with driver Sql
-			String urlString ="jdbc:mysql://localhost:3306/webbanhang";
+			String urlString ="jdbc:mysql://localhost:3307/webbanhang";
 			String username="root";
-			String passsword ="909020";
+			String passsword ="090902";
 			try {
 				//Load driver
 				Class.forName("com.mysql.jdbc.Driver");

@@ -6,20 +6,20 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src/main/java"/>
-	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v9.0">
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="/Users/thanh/Documents/Lib/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="/Users/thanh/Documents/Lib/gson-2.2.2.jar"/>
+	<classpathentry kind="lib" path="/Users/thanh/Documents/Lib/jstl-1.2.jar"/>
+	<classpathentry kind="lib" path="/Users/thanh/Documents/Lib/mysql-connector-j-8.3.0.jar"/>
+	<classpathentry kind="lib" path="/Users/thanh/Documents/Lib/org.apache.commons.fileupload.jar"/>
+	<classpathentry kind="lib" path="/Users/thanh/Documents/Lib/poi-3.15.jar"/>
+	<classpathentry kind="lib" path="/Users/thanh/Documents/Lib/rest-api-sdk-1.14.0.jar"/>
+	<classpathentry kind="lib" path="/Users/thanh/Documents/Lib/slf4j-api-2.0.13.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v9.0 (2)">
 		<attributes>
 			<attribute name="owner.project.facets" value="jst.web"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
-	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="C:/Users/OS/Documents/Libbb/commons-io-2.4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/OS/Documents/Libbb/jstl-1.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/OS/Documents/Libbb/mysql-connector-j-8.3.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/OS/Documents/Libbb/org.apache.commons.fileupload.jar"/>
-	<classpathentry kind="lib" path="C:/Users/OS/Documents/Libbb/poi-3.15.jar"/>
-	<classpathentry kind="lib" path="C:/Users/OS/Downloads/rest-api-sdk-1.14.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/OS/Downloads/slf4j-api-2.0.13.jar"/>
-	<classpathentry kind="lib" path="C:/Users/OS/Downloads/gson-2.2.2.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

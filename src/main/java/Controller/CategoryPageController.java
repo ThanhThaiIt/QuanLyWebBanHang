@@ -111,9 +111,11 @@ public class CategoryPageController extends HttpServlet {
 				request.setAttribute("AllProduct", mapAllProduct);
 
 				request.setAttribute("numberpage", Integer.parseInt(pageidstr));
-
+				request.setAttribute("stt", 0);
 				RequestDispatcher rd = request.getRequestDispatcher("View/front-end/CategoryPage.jsp");
 				rd.forward(request, response);
+				
+				
 			}
 
 		}

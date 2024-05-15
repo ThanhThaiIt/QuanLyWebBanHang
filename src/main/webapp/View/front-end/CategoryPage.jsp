@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@page import="org.apache.jasper.tagplugins.jstl.core.If"%>
 <html lang="en">
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
 <head>
@@ -172,116 +173,173 @@
 														<div
 															class="collection-filter container-fluid top-filter filter-bottom-content">
 															<!-- side-bar colleps block stat -->
-															<div class="collection-filter-block row m-0">
-																<!-- brand filter start -->
-																<div class="collection-mobile-back col-12">
-																	<span class="filter-back"><i
-																		class="fa fa-angle-left" aria-hidden="true"></i> back</span>
-																</div>
-																<div class="collection-collapse-block open col-lg-3">
-																	<h3 class="collapse-block-title">brand</h3>
-																	<div class="collection-collapse-block-content">
-																		<div class="collection-brand-filter">
-																			<div class="form-check collection-filter-checkbox">
-																				<input type="checkbox" class="form-check-input"
-																					id="zara"> <label class="form-check-label"
-																					for="zara">zara</label>
-																			</div>
-																			<div class="form-check collection-filter-checkbox">
-																				<input type="checkbox" class="form-check-input"
-																					id="vera-moda"> <label
-																					class="form-check-label" for="vera-moda">vera-moda</label>
-																			</div>
-																			<div class="form-check collection-filter-checkbox">
-																				<input type="checkbox" class="form-check-input"
-																					id="forever-21"> <label
-																					class="form-check-label" for="forever-21">forever-21</label>
-																			</div>
-																			<div class="form-check collection-filter-checkbox">
-																				<input type="checkbox" class="form-check-input"
-																					id="roadster"> <label
-																					class="form-check-label" for="roadster">roadster</label>
-																			</div>
-																			<div class="form-check collection-filter-checkbox">
-																				<input type="checkbox" class="form-check-input"
-																					id="only"> <label class="form-check-label"
-																					for="only">only</label>
+
+															<form action="SearchAdvanceController?pageid=1" method="post"
+																id="filterForm">
+																<div class="collection-filter-block row m-0">
+																	<!-- brand filter start -->
+																	<div class="collection-mobile-back col-12">
+																		<span class="filter-back"><i
+																			class="fa fa-angle-left" aria-hidden="true"></i> back</span>
+																	</div>
+																	<div class="collection-collapse-block open col-lg-3">
+																		<h3 class="collapse-block-title">brand</h3>
+																		<div class="collection-collapse-block-content">
+																			<div class="collection-brand-filter">
+
+																				<div class="form-check collection-filter-checkbox">
+																					<input type="checkbox" name="brand" value="1"
+																						class="form-check-input" id="zara"> <label
+																						class="form-check-label" for="zara">Guangzhou
+																						Brand</label>
+																				</div>
+
+																				<div class="form-check collection-filter-checkbox">
+																					<input type="checkbox" name="brand" value="2"
+																						class="form-check-input" id="vera-moda"> <label
+																						class="form-check-label" for="vera-moda">Taiwan
+																						Brand</label>
+																				</div>
+																				<div class="form-check collection-filter-checkbox">
+																					<input type="checkbox" name="brand" value="3"
+																						class="form-check-input" id="forever-21">
+																					<label class="form-check-label" for="forever-21">Vietnam
+																						Brand</label>
+																				</div>
+																				<div class="form-check collection-filter-checkbox">
+																					<input type="checkbox" name="brand" value="4"
+																						class="form-check-input" id="roadster"> <label
+																						class="form-check-label" for="roadster">Fest
+																						Brand</label>
+																				</div>
+																				<div class="form-check collection-filter-checkbox">
+																					<input type="checkbox" name="brand" value="10"
+																						class="form-check-input" id="only"> <label
+																						class="form-check-label" for="only">Nike</label>
+																				</div>
+																				<div class="form-check collection-filter-checkbox">
+																					<input type="checkbox" name="brand" value="11"
+																						class="form-check-input" id="only"> <label
+																						class="form-check-label" for="only">Rolex</label>
+																				</div>
+																				<div class="form-check collection-filter-checkbox">
+																					<input type="checkbox" name="brand" value="12"
+																						class="form-check-input" id="only"> <label
+																						class="form-check-label" for="only">New
+																						Era</label>
+																				</div>
 																			</div>
 																		</div>
 																	</div>
-																</div>
-																<!-- color filter start here -->
-																<div class="collection-collapse-block open col-lg-3">
-																	<h3 class="collapse-block-title">colors</h3>
-																	<div class="collection-collapse-block-content">
-																		<div class="color-w-name">
-																			<ul class="row">
-																				<li class="active col-12"><span class="color-1"></span>white
-																				</li>
-																				<li class="col-12"><span class="color-2"></span>grey</li>
-																				<li class="col-12"><span class="color-3"></span>red</li>
-																				<li class="col-12"><span class="color-4"></span>purple
-																				</li>
-																				<li class="col-12"><span class="color-5"></span>blue</li>
-																				<li class="col-12"><span class="color-6"></span>yellow
-																				</li>
-																				<li class="col-12"><span class="color-7"></span>green
-																				</li>
-																			</ul>
-																		</div>
-																	</div>
-																</div>
-																<!-- size filter start here -->
-																<div
-																	class="collection-collapse-block border-0 open col-lg-3">
-																	<h3 class="collapse-block-title">size</h3>
-																	<div class="collection-collapse-block-content">
-																		<div class="collection-brand-filter">
-																			<div class="form-check collection-filter-checkbox">
-																				<input type="checkbox" class="form-check-input"
-																					id="hundred"> <label
-																					class="form-check-label" for="hundred">s</label>
-																			</div>
-																			<div class="form-check collection-filter-checkbox">
-																				<input type="checkbox" class="form-check-input"
-																					id="twohundred"> <label
-																					class="form-check-label" for="twohundred">m</label>
-																			</div>
-																			<div class="form-check collection-filter-checkbox">
-																				<input type="checkbox" class="form-check-input"
-																					id="threehundred"> <label
-																					class="form-check-label" for="threehundred">l</label>
-																			</div>
-																			<div class="form-check collection-filter-checkbox">
-																				<input type="checkbox" class="form-check-input"
-																					id="fourhundred"> <label
-																					class="form-check-label" for="fourhundred">xl</label>
+																	<!-- color filter start here -->
+																	<div class="collection-collapse-block open col-lg-3">
+																		<h3 class="collapse-block-title">colors</h3>
+																		<div class="collection-collapse-block-content">
+																			<div class="color-w-name">
+																				<ul class="row">
+																					<!--  
+																					<li class="active col-12"><span
+																						class="color-1"></span>white</li>
+																					<li class="col-12"><span class="color-2" ></span>grey</li>
+																					<li class="col-12"><span class="color-3"></span>red</li>
+																					<li class="col-12"><span class="color-4"></span>purple
+																					</li>
+																					<li class="col-12"><span class="color-5"></span>blue</li>
+																					<li class="col-12"><span class="color-6"></span>yellow
+																					</li>
+																					<li class="col-12"><span class="color-7"></span>green
+																					</li>
+																					-->
+
+																					<li class="active col-12"><span
+																						class="color-1"></span> <input type="checkbox"
+																						name="color" value="5">white</li>
+
+																					<li class="col-12"><span class="color-2"></span>
+																						<input type="checkbox" name="color" value="3">grey
+																					</li>
+
+																					<li class="col-12"><span class="color-3"></span>
+																						<input type="checkbox" name="color" value="1">red
+																					</li>
+
+
+
+																					<li class="col-12"><span class="color-5"></span>
+																						<input type="checkbox" name="color" value="2">blue
+																					</li>
+
+																					<li class="col-12"><span class="color-6"></span>
+																						<input type="checkbox" name="color" value="4">yellow
+																					</li>
+
+
+
+																				</ul>
 																			</div>
 																		</div>
 																	</div>
-																</div>
-																<!-- price filter start here -->
-																<div
-																	class="collection-collapse-block border-0 open col-lg-3">
-																	<h3 class="collapse-block-title">price</h3>
-																	<div class="collection-collapse-block-content">
-																		<div class="wrapper mt-3">
-																			<div class="range-slider">
-																				<input type="text" class="js-range-slider" value="" />
+																	<!-- size filter start here -->
+																	<div
+																		class="collection-collapse-block border-0 open col-lg-3">
+																		<h3 class="collapse-block-title">size</h3>
+																		<div class="collection-collapse-block-content">
+																			<div class="collection-brand-filter">
+																				<div class="form-check collection-filter-checkbox">
+																					<input type="checkbox" name="size" value="1"
+																						class="form-check-input" id="hundred"> <label
+																						class="form-check-label" for="hundred">s</label>
+																				</div>
+																				<div class="form-check collection-filter-checkbox">
+																					<input type="checkbox" name="size" value="2"
+																						class="form-check-input" id="twohundred">
+																					<label class="form-check-label" for="twohundred">m</label>
+																				</div>
+																				<div class="form-check collection-filter-checkbox">
+																					<input type="checkbox" name="size" value="3"
+																						class="form-check-input" id="threehundred">
+																					<label class="form-check-label" for="threehundred">l</label>
+																				</div>
+																				<div class="form-check collection-filter-checkbox">
+																					<input type="checkbox" name="size" value="4"
+																						class="form-check-input" id="fourhundred">
+																					<label class="form-check-label" for="fourhundred">xl</label>
+																				</div>
 																			</div>
 																		</div>
 																	</div>
-																</div>
-																<div class="col-12">
-																	<div class="text-end button_bottom">
-																		<a href="javascript:void(0)"
-																			class="btn btn-solid btn-xs me-2">apply</a> <a
-																			href="javascript:void(0)"
-																			class="btn btn-solid btn-xs close-filter-bottom">close
-																			filter</a>
+																	<!-- price filter start here -->
+																	<div
+																		class="collection-collapse-block border-0 open col-lg-3">
+																		<h3 class="collapse-block-title">price</h3>
+																		<div class="collection-collapse-block-content">
+																			<div class="wrapper mt-3">
+																				<div class="range-slider">
+																					<input type="text" class="js-range-slider" value="" />
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<div class="col-12">
+																		<div class="text-end button_bottom">
+
+
+																			<button type="submit"
+																				class="btn btn-solid btn-xs me-2">apply</button>
+																			<button type="reset"
+																				class="btn btn-solid btn-xs close-filter-bottom">close
+																				filter</button>
+
+																			<!--  
+																			<a href="javascript:void(0)"
+																				class="btn btn-solid btn-xs me-2">apply</a> <a
+																				href="javascript:void(0)"
+																				class="btn btn-solid btn-xs close-filter-bottom">close
+																				filter</a>-->
+																		</div>
 																	</div>
 																</div>
-															</div>
+															</form>
 															<!-- silde-bar colleps block end here -->
 														</div>
 
@@ -349,6 +407,11 @@
 
 											</div>
 										</div>
+
+										<%
+												int stt = (int) request.getAttribute("stt");
+										if(stt == 1) {
+											%>
 										<div class="product-pagination">
 											<div class="theme-paggination-block">
 												<div class="container-fluid p-0">
@@ -356,46 +419,46 @@
 														<div class="col-xl-6 col-md-6 col-sm-12">
 															<nav aria-label="Page navigation">
 																<ul class="pagination">
-																<c:if test="${numberpage == 1}">
-																	<li class="page-item"><a class="page-link"
-																		href="#" aria-label="Previous"><span
-																			aria-hidden="true"><i
-																				class="fa fa-chevron-left" aria-hidden="true"></i></span> <span
-																			class="sr-only">Previous</span></a></li>
-																		</c:if>	
-																		
-																		<c:if test="${numberpage != 1}">
-																	<li class="page-item"><a class="page-link"
-																		href="CategoryPageController?pageid=${numberpage-1}" aria-label="Previous"><span
-																			aria-hidden="true"><i
-																				class="fa fa-chevron-left" aria-hidden="true"></i></span> <span
-																			class="sr-only">Previous</span></a></li>
-																		</c:if>	
-																		
-																		
-																			
-																			
-																	<c:forEach begin="1" end="${maxpageid}" var="num">		
-																	<li class="page-item active"><a class="page-link"
-																		href="CategoryPageController?pageid=${num}">${num}</a></li>
+																	<c:if test="${numberpage == 1}">
+																		<li class="page-item"><a class="page-link"
+																			href="#" aria-label="Previous"><span
+																				aria-hidden="true"><i
+																					class="fa fa-chevron-left" aria-hidden="true"></i></span>
+																				<span class="sr-only">Previous</span></a></li>
+																	</c:if>
+
+																	<c:if test="${numberpage != 1}">
+																		<li class="page-item"><a class="page-link"
+																			href="SearchAdvanceController?pageid=${numberpage-1}"
+																			aria-label="Previous"><span aria-hidden="true"><i
+																					class="fa fa-chevron-left" aria-hidden="true"></i></span>
+																				<span class="sr-only">Previous</span></a></li>
+																	</c:if>
+
+
+
+
+																	<c:forEach begin="1" end="${maxpageid}" var="num">
+																		<li class="page-item active"><a class="page-link"
+																			href="SearchAdvanceController?pageid=${num}">${num}</a></li>
 																	</c:forEach>
 																	<c:if test="${numberpage == maxpageid}">
-																	<li class="page-item"><a class="page-link"
-																		href="#" aria-label="Next"><span
-																			aria-hidden="true"><i
-																				class="fa fa-chevron-right" aria-hidden="true"></i></span>
-																			<span class="sr-only">Next</span></a></li>
-																			
-																			</c:if>	
-																			
-																			<c:if test="${numberpage != maxpageid}">
-																	<li class="page-item"><a class="page-link"
-																		href="CategoryPageController?pageid=${numberpage+1}" aria-label="Next"><span
-																			aria-hidden="true"><i
-																				class="fa fa-chevron-right" aria-hidden="true"></i></span>
-																			<span class="sr-only">Next</span></a></li>
-																			
-																			</c:if>	
+																		<li class="page-item"><a class="page-link"
+																			href="#" aria-label="Next"><span
+																				aria-hidden="true"><i
+																					class="fa fa-chevron-right" aria-hidden="true"></i></span>
+																				<span class="sr-only">Next</span></a></li>
+
+																	</c:if>
+
+																	<c:if test="${numberpage != maxpageid}">
+																		<li class="page-item"><a class="page-link"
+																			href="SearchAdvanceController?pageid=${numberpage+1}"
+																			aria-label="Next"><span aria-hidden="true"><i
+																					class="fa fa-chevron-right" aria-hidden="true"></i></span>
+																				<span class="sr-only">Next</span></a></li>
+
+																	</c:if>
 																</ul>
 															</nav>
 														</div>
@@ -408,6 +471,77 @@
 												</div>
 											</div>
 										</div>
+
+									<%
+    } else {
+%>
+
+
+<div class="product-pagination">
+											<div class="theme-paggination-block">
+												<div class="container-fluid p-0">
+													<div class="row">
+														<div class="col-xl-6 col-md-6 col-sm-12">
+															<nav aria-label="Page navigation">
+																<ul class="pagination">
+																	<c:if test="${numberpage == 1}">
+																		<li class="page-item"><a class="page-link"
+																			href="#" aria-label="Previous"><span
+																				aria-hidden="true"><i
+																					class="fa fa-chevron-left" aria-hidden="true"></i></span>
+																				<span class="sr-only">Previous</span></a></li>
+																	</c:if>
+
+																	<c:if test="${numberpage != 1}">
+																		<li class="page-item"><a class="page-link"
+																			href="CategoryPageController?pageid=${numberpage-1}"
+																			aria-label="Previous"><span aria-hidden="true"><i
+																					class="fa fa-chevron-left" aria-hidden="true"></i></span>
+																				<span class="sr-only">Previous</span></a></li>
+																	</c:if>
+
+
+
+
+																	<c:forEach begin="1" end="${maxpageid}" var="num">
+																		<li class="page-item active"><a class="page-link"
+																			href="CategoryPageController?pageid=${num}">${num}</a></li>
+																	</c:forEach>
+																	<c:if test="${numberpage == maxpageid}">
+																		<li class="page-item"><a class="page-link"
+																			href="#" aria-label="Next"><span
+																				aria-hidden="true"><i
+																					class="fa fa-chevron-right" aria-hidden="true"></i></span>
+																				<span class="sr-only">Next</span></a></li>
+
+																	</c:if>
+
+																	<c:if test="${numberpage != maxpageid}">
+																		<li class="page-item"><a class="page-link"
+																			href="CategoryPageController?pageid=${numberpage+1}"
+																			aria-label="Next"><span aria-hidden="true"><i
+																					class="fa fa-chevron-right" aria-hidden="true"></i></span>
+																				<span class="sr-only">Next</span></a></li>
+
+																	</c:if>
+																</ul>
+															</nav>
+														</div>
+														<div class="col-xl-6 col-md-6 col-sm-12">
+															<div class="product-search-count-bottom">
+																<h5>Showing Products 1-24 of 10 Result</h5>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+
+<%
+    }
+%>
+
 									</div>
 								</div>
 							</div>

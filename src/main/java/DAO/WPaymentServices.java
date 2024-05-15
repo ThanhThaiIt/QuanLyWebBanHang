@@ -67,8 +67,8 @@ public class WPaymentServices {
 	
 	private RedirectUrls getRedirectURLs() {
 		RedirectUrls redirectUrls = new RedirectUrls();
-		redirectUrls.setCancelUrl("http://localhost:8082/WebBanHang/cancel.jsp");
-		redirectUrls.setReturnUrl("http://localhost:8082/WebBanHang/review_payment");
+		redirectUrls.setCancelUrl("http://localhost:8080/WebBanHang/cancel.jsp");
+		redirectUrls.setReturnUrl("http://localhost:8080/WebBanHang/review_payment");
 		
 		return redirectUrls;
 	}

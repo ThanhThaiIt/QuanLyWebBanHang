@@ -40,4 +40,16 @@ public static final Map<Integer, String> mapColor = new HashMap<Integer, String>
 	put(4, "bg-light");
 }};
 
+
+public static int[] parstListStringToInterger(String[] lisStrings) {
+	if (lisStrings == null) {
+		return null;
+	}
+	int[] listInt = new int[lisStrings.length]; // Initialize listInt with appropriate length
+    for (int i = 0; i < lisStrings.length; i++) {
+        listInt[i] = Integer.parseInt(lisStrings[i]);
+    }
+    return listInt;
+}
+
 }
