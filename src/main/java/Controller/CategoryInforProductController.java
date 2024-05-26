@@ -26,51 +26,51 @@ public class CategoryInforProductController extends HttpServlet {
     }
 
  
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doPost(request, response);
-	}
+//	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		doPost(request, response);
+//	}
 
  
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String pageidstr = request.getParameter("pageid");
-		if (pageidstr != null) {
-			int pageid = Integer.parseInt(pageidstr);
-			int count = 3;
-			
-			
-			if (pageid == 1)
-			{
-				
-			}
-			else 
-			{
-				pageid = pageid -1;
-				pageid = pageid * count +1;
-			}
-			
-			List<Product> list = CategoryPageDAO.DisplayAllproduct(pageid, count);
-			
-			int sumrow = CategoryPageDAO.Countrow();
-			int maxpageid= 0;
-			
-			if ((sumrow/count)%2==0)
-			{
-				maxpageid = (sumrow/count);
-			}
-			else
-			{
-				maxpageid = (sumrow/count)+1;
-			}
-			
-			request.setAttribute("maxpageid",maxpageid);
-			
-			request.setAttribute("listgrammarguidelinemanage",list);
-			
-			request.setAttribute("numberpage",Integer.parseInt(pageidstr));
-			
-			RequestDispatcher rd = request.getRequestDispatcher("View/front-end/CategoryPage.jsp");
-			rd.forward(request,response);
-		}
-	}
+//	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		String pageidstr = request.getParameter("pageid");
+//		if (pageidstr != null) {
+//			int pageid = Integer.parseInt(pageidstr);
+//			int count = 3;
+//			
+//			
+//			if (pageid == 1)
+//			{
+//				
+//			}
+//			else 
+//			{
+//				pageid = pageid -1;
+//				pageid = pageid * count +1;
+//			}
+//			
+//			List<Product> list = CategoryPageDAO.DisplayAllproduct(pageid, count);
+//			
+//			int sumrow = CategoryPageDAO.Countrow();
+//			int maxpageid= 0;
+//			
+//			if ((sumrow/count)%2==0)
+//			{
+//				maxpageid = (sumrow/count);
+//			}
+//			else
+//			{
+//				maxpageid = (sumrow/count)+1;
+//			}
+//			
+//			request.setAttribute("maxpageid",maxpageid);
+//			
+//			request.setAttribute("listgrammarguidelinemanage",list);
+//			
+//			request.setAttribute("numberpage",Integer.parseInt(pageidstr));
+//			
+////			RequestDispatcher rd = request.getRequestDispatcher("View/front-end/CategoryPage.jsp");
+////			rd.forward(request,response);
+//		}
+//	}
 
 }

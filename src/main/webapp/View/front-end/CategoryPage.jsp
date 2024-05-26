@@ -55,6 +55,47 @@
 <!-- Theme css -->
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/View/assets/css/style.css">
+	
+	<script type="text/javascript">
+	
+
+	
+	
+	function pagination(idPage ,brands, colors, sizes) {
+		var xhttp;
+		 
+		 
+
+			//var url = "SearchAdvanceController?pageid=" + idPage;  encodeURIComponent(
+			
+			var url = "SearchAdvanceController2?pageid=" + idPage +
+	          "&brands=" + brands +
+	          "&colors=" + colors +
+	          "&sizes=" + sizes;
+			//alert(url);
+			if (window.XMLHttpRequest) {
+				//code for chrome, firefox, IE7+, Opera, Safari 
+				xhttp = new XMLHttpRequest();
+			} else {
+				// code for IE6, IE5
+				xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+
+			//để theo dõi thay đổi trạng thái của XMLHttpRequest.
+			xhttp.onreadystatechange = function() {// trang thai luon la 4 (4: hoàn hành xử lý và đợi gửi lại phía client)
+				if (xhttp.readyState == 4) { // lay gia tri tu trang result.jsp
+					var data = xhttp.responseText;
+					document.getElementById("Pagination").innerHTML = data;
+				}
+			}
+
+			// gui yeu cau Sever/ Ajax reuqest
+			xhttp.open("POST", url, true);
+			xhttp.send();
+		 
+	}
+	
+	</script>
 
 </head>
 
@@ -115,7 +156,7 @@
 												return and exchange policy, free and fast shipping across
 												all pin codes, cash or card on delivery option, deals and
 												discounts, among other perks. So, sign up now and shop for
-												westarn wear to your heart’s content on Multikart.</p>
+												westarn wear to your heartâs content on Multikart.</p>
 										</div>
 									</div>
 									<div class="collection-product-wrapper">
@@ -347,6 +388,10 @@
 												</div>
 											</div>
 										</div>
+										 <!--  
+										<div id="Pagination"></div>
+										-->
+										 <div id="Pagination">
 										<div class="product-wrapper-grid">
 											<div class="row margin-res">
 
@@ -407,11 +452,18 @@
 
 											</div>
 										</div>
-
+										</div>
+										
 										<%
 												int stt = (int) request.getAttribute("stt");
 										if(stt == 1) {
 											%>
+											
+											
+
+										
+										
+										
 										<div class="product-pagination">
 											<div class="theme-paggination-block">
 												<div class="container-fluid p-0">
@@ -426,10 +478,19 @@
 																					class="fa fa-chevron-left" aria-hidden="true"></i></span>
 																				<span class="sr-only">Previous</span></a></li>
 																	</c:if>
+																	
+																	
+																	<!-- href="SearchAdvanceController?pageid=${numberpage-1}"
+																	href="SearchAdvanceController?pageid=${num}"
+																	href="SearchAdvanceController?pageid=${numberpage+1}"
+																	onclick="pagination(${numberpage-1},${listBrand},${listColor},${listSize})"
+																	  -->
+																	
 
 																	<c:if test="${numberpage != 1}">
 																		<li class="page-item"><a class="page-link"
-																			href="SearchAdvanceController?pageid=${numberpage-1}"
+																		href="javascript:void(0);"
+																			onclick="pagination('${numberpage-1}','${listBrand}','${listColor}','${listSize}')"
 																			aria-label="Previous"><span aria-hidden="true"><i
 																					class="fa fa-chevron-left" aria-hidden="true"></i></span>
 																				<span class="sr-only">Previous</span></a></li>
@@ -440,7 +501,8 @@
 
 																	<c:forEach begin="1" end="${maxpageid}" var="num">
 																		<li class="page-item active"><a class="page-link"
-																			href="SearchAdvanceController?pageid=${num}">${num}</a></li>
+																		href="javascript:void(0);"
+																			onclick="pagination('${num}','${listBrand}','${listColor}','${listSize}')">${num}</a></li>
 																	</c:forEach>
 																	<c:if test="${numberpage == maxpageid}">
 																		<li class="page-item"><a class="page-link"
@@ -453,7 +515,8 @@
 
 																	<c:if test="${numberpage != maxpageid}">
 																		<li class="page-item"><a class="page-link"
-																			href="SearchAdvanceController?pageid=${numberpage+1}"
+																			href="javascript:void(0);"
+																			onclick="pagination('${numberpage+1}','${listBrand}','${listColor}','${listSize}')"
 																			aria-label="Next"><span aria-hidden="true"><i
 																					class="fa fa-chevron-right" aria-hidden="true"></i></span>
 																				<span class="sr-only">Next</span></a></li>
@@ -475,7 +538,66 @@
 									<%
     } else {
 %>
+<div class="product-wrapper-grid">
+											<div class="row margin-res">
 
+												<c:forEach items="${AllProduct}" var="list">
+													<div class="col-xl-3 col-6 col-grid-box">
+														<div class="product-box">
+															<div class="img-wrapper">
+																<div class="front">
+																	<a href="ProductController?id=${list.key.getId()}"><img
+																		src="${pageContext.request.contextPath}/View${list.value.get(0)}"
+																		class="img-fluid blur-up lazyload bg-img" alt=""></a>
+																</div>
+																<div class="back">
+																	<a href="ProductController?id=${list.key.getId()}"><img
+																		src="${pageContext.request.contextPath}/View${list.value.get(1)}"
+																		class="img-fluid blur-up lazyload bg-img" alt=""></a>
+																</div>
+																<div class="cart-info cart-wrap">
+																	<button data-bs-toggle="modal"
+																		data-bs-target="#addtocart" title="Add to cart">
+																		<i class="ti-shopping-cart"></i>
+																	</button>
+																	<a href="javascript:void(0)" title="Add to Wishlist"><i
+																		class="ti-heart" aria-hidden="true"></i></a> <a href="#"
+																		data-bs-toggle="modal" data-bs-target="#quick-view"
+																		title="Quick View"><i class="ti-search"
+																		aria-hidden="true"></i></a> <a href="compare.html"
+																		title="Compare"><i class="ti-reload"
+																		aria-hidden="true"></i></a>
+																</div>
+															</div>
+															<div class="product-detail">
+																<div>
+																	<div class="rating">
+																		<i class="fa fa-star"></i> <i class="fa fa-star"></i>
+																		<i class="fa fa-star"></i> <i class="fa fa-star"></i>
+																		<i class="fa fa-star"></i>
+																	</div>
+																	<a href="ProductController?id=${list.key.getId()}">
+																		<h6>${list.key.getName()}</h6>
+																	</a>
+																	<p>Lorem Ipsum is simply dummy text of the printing
+																		and typesetting industry. Lorem Ipsum has been the
+																		industry's standard dummy text ever since the 1500s,
+																		when an unknown printer took a galley of type and
+																		scrambled it to make a type specimen book</p>
+																	<h4>$${list.key.getPrice()}</h4>
+																	<ul class="color-variant">
+																		<li class="bg-light0"></li>
+																		<li class="bg-light1"></li>
+																		<li class="bg-light2"></li>
+																	</ul>
+																</div>
+															</div>
+														</div>
+													</div>
+												</c:forEach>
+
+											</div>
+										</div>
 
 <div class="product-pagination">
 											<div class="theme-paggination-block">

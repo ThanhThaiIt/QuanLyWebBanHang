@@ -19,11 +19,14 @@ import DAO.CategoryPageDAO;
 import DAO.CategorySearchAdvanceDAO;
 import ultil.Ultil;
 
-@WebServlet("/SearchAdvanceController")
-public class SearchAdvanceController extends HttpServlet {
+/**
+ * Servlet implementation class SearchAdvanceController2
+ */
+@WebServlet("/SearchAdvanceController2")
+public class SearchAdvanceController2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public SearchAdvanceController() {
+	public SearchAdvanceController2() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -49,11 +52,35 @@ public class SearchAdvanceController extends HttpServlet {
 				pageid = pageid - 1;
 				pageid = pageid * count;
 			}
-
-			int[] listIntBrand = Ultil.parstListStringToInterger(request.getParameterValues("brand"));
-			int[] listIntColor = Ultil.parstListStringToInterger(request.getParameterValues("color"));
-			int[] listIntSize = Ultil.parstListStringToInterger(request.getParameterValues("size"));
+			int[] listIntBrand =null;
+			int[] listIntColor =null;
+			int[] listIntSize = null;
+			String brands = request.getParameter("brands");
+			String colors = request.getParameter("colors");
+			String sizes = request.getParameter("sizes");
+			if (brands.trim().isEmpty()) {
+				
+				listIntBrand = null;
+			}else {
+				listIntBrand = Ultil.convertStringToIntArray(brands);
+			}
 			
+			
+			
+			if (colors.trim().isEmpty()) {
+				listIntColor = null;
+			}else {
+				
+				
+				listIntColor = Ultil.convertStringToIntArray(colors);
+			}
+			
+			if (sizes.trim().isEmpty()) {
+				listIntSize = null;
+			}else {
+				
+				listIntSize = Ultil.convertStringToIntArray(sizes);
+			}
 			
 			
 			List<Product> listProducts = new ArrayList<Product>();
@@ -64,7 +91,7 @@ public class SearchAdvanceController extends HttpServlet {
 				e.printStackTrace();
 			}
 
-			Map<Product, List<String>> mapAllProduct = new HashMap<Product, List<String>>();
+			Map<Product, List<String>> mapAllProduct2 = new HashMap<Product, List<String>>();
 			List<String> listImage = new ArrayList<String>();
 			if (listProducts != null) {
 				for (int i = 0; i < listProducts.size(); i++) {
@@ -77,7 +104,7 @@ public class SearchAdvanceController extends HttpServlet {
 						// trỏ đến
 						// từng Product để lấy sản
 						// phầm tương ứng theo ID
-					mapAllProduct.put(listProducts.get(i), listImage);
+					mapAllProduct2.put(listProducts.get(i), listImage);
 				}
 			}
 
@@ -99,46 +126,19 @@ public class SearchAdvanceController extends HttpServlet {
 
 			request.setAttribute("maxpageid", maxpageid);
 
-			request.setAttribute("AllProduct", mapAllProduct);
+			request.setAttribute("AllProduct2", mapAllProduct2);
 
 			request.setAttribute("numberpage", Integer.parseInt(pageidstr));
-			
-			if (listIntBrand != null) {
-				request.setAttribute("listBrand", Ultil.convertIntArrayToString(listIntBrand));
-			}		
-			
-			if (listIntColor != null) {
-				request.setAttribute("listColor",Ultil.convertIntArrayToString(listIntColor) );
-			}
-			
-			if (listIntSize != null) {
-				request.setAttribute("listSize",Ultil.convertIntArrayToString(listIntSize));
-			}
-			
-//			request.setAttribute("listColor",Ultil.convertIntArrayToString(listIntColor) );
-//			request.setAttribute("listSize",Ultil.convertIntArrayToString(listIntSize));
+			request.setAttribute("listBrand", listIntBrand);
+			request.setAttribute("listColor", listIntColor);
+			request.setAttribute("listSize", listIntSize);
 			
 				
 			request.setAttribute("stt", 1);
-			RequestDispatcher rd = request.getRequestDispatcher("View/front-end/CategoryPage.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("View/front-end/PaginationSearchAdvance.jsp");
 			rd.forward(request, response);
 
 		}
 	}
 
 }
-
-
-
-//int sumrow =19;
-//int maxpageid = 0;
-//
-//if ((sumrow / count) % 2 == 0) {
-//	maxpageid = (sumrow / count);
-//} else if((sumrow / count) % 2 != 0) {
-//	maxpageid = (sumrow / count) + 1;
-//}
-//
-//request.setAttribute("AllProduct", mapAllProduct);
-//request.setAttribute("maxpageid", maxpageid);
-//request.setAttribute("numberpage", Integer.parseInt(pageidstr));

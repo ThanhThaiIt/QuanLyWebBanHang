@@ -36,32 +36,7 @@ public class CategoryPageController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-//		int idCat = Integer.parseInt(request.getParameter("cate"));
-//
-//		if (idCat == 0) {
-//			try {
-//				List<Product> allProduct = CategoryPageDAO.getAllProduct();
-//				Map<Product, List<String>> mapAllProduct = new HashMap<Product, List<String>>();
-//
-//				if (allProduct != null) {
-//					for (int i = 0; i < allProduct.size(); i++) {
-//						List<String> listImage = ProductDAO.getImageById(allProduct.get(i).getId());// list.get(i).getId()
-//																									// trỏ đến
-//						// từng Product để lấy sản
-//						// phầm tương ứng theo ID
-//						mapAllProduct.put(allProduct.get(i), listImage);
-//					}
-//				}
-//
-//				request.setAttribute("AllProduct", mapAllProduct);
-//				RequestDispatcher rd = request.getRequestDispatcher("View/front-end/CategoryPage.jsp");
-//				rd.forward(request, response);
-//			} catch (SQLException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-//
-//		}
+
 
 		//String idCat = request.getParameter("idcate");
 		String pageidstr = request.getParameter("pageid");
@@ -122,3 +97,29 @@ public class CategoryPageController extends HttpServlet {
 //	}
 
 }
+//int idCat = Integer.parseInt(request.getParameter("cate"));
+//
+//if (idCat == 0) {
+//	try {
+//		List<Product> allProduct = CategoryPageDAO.getAllProduct();
+//		Map<Product, List<String>> mapAllProduct = new HashMap<Product, List<String>>();
+//
+//		if (allProduct != null) {
+//			for (int i = 0; i < allProduct.size(); i++) {
+//				List<String> listImage = ProductDAO.getImageById(allProduct.get(i).getId());// list.get(i).getId()
+//																							// trỏ đến
+//				// từng Product để lấy sản
+//				// phầm tương ứng theo ID
+//				mapAllProduct.put(allProduct.get(i), listImage);
+//			}
+//		}
+//
+//		request.setAttribute("AllProduct", mapAllProduct);
+//		RequestDispatcher rd = request.getRequestDispatcher("View/front-end/CategoryPage.jsp");
+//		rd.forward(request, response);
+//	} catch (SQLException e) {
+//		// TODO Auto-generated catch block
+//		e.printStackTrace();
+//	}
+//
+//}
