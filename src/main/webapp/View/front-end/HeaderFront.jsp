@@ -285,7 +285,7 @@
 												Back<i class="fa fa-angle-right ps-2" aria-hidden="true"></i>
 											</div>
 										</li>
-										<li><a href="index.html">Home</a></li>
+										<li><a href="IndexController">Home</a></li>
 										<li class="mega" id="hover-cls"><a href="#">feature
 												<div class="lable-nav">new</div>
 										</a>

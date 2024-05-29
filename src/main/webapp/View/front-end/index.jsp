@@ -221,12 +221,17 @@ function addToCart(idProduct) {
 											title="Add to cart">
 											<i  class="ti-shopping-cart"></i>
 										</button>
+										
 										<a href="javascript:void(0)" title="Add to Wishlist"> <i
 											class="ti-heart" aria-hidden="true"></i>
-										</a> <a href="#" data-bs-toggle="modal"
+										</a> 
+										
+										<a href="QuickViewProductController?id=${list.key.getId()}" data-bs-toggle="modal"
 											data-bs-target="#quick-view" title="Quick View"> <i
 											class="ti-search" aria-hidden="true"></i>
-										</a> <a href="compare.html" title="Compare"> <i
+										</a> 
+										
+										<a href="compare.html" title="Compare"> <i
 											class="ti-reload" aria-hidden="true"></i>
 										</a>
 									</div>
@@ -900,6 +905,9 @@ function addToCart(idProduct) {
 
 
 	<!-- Quick-view modal popup start-->
+	
+	
+	
 	<div class="modal fade bd-example-modal-lg theme-modal" id="quick-view"
 		tabindex="-1" role="dialog" aria-hidden="true">
 		<div class="modal-dialog modal-lg modal-dialog-centered"
@@ -968,6 +976,9 @@ function addToCart(idProduct) {
 			</div>
 		</div>
 	</div>
+	
+	
+	
 	<!-- Quick-view modal popup end-->
 
 

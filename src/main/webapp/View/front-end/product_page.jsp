@@ -65,15 +65,15 @@ function choiceColor(ids){
 
 function addToCart(idProduct) {
 	var xhttp;
-	if(size == -1){
-		alert('yeu cầu sai');
+/* 	if(size == -1){
+		alert('Vui Long Chọn Size!!! ');
 		return;
 	}
 	
 	if(color == -1){
-		alert('Color sai');
+		alert('Vui Lòng Chọn Color!!! ');
 		return;
-	}
+	} */
 	
 	
 	//var ulElement = document.getElementById("sizee");
@@ -312,7 +312,9 @@ function loadDoc(data) {
 									class="btn btn-solid" id="cartEffect"
 									class="btn btn-solid hover-solid btn-animation"><i
 									class="fa fa-shopping-cart me-1" aria-hidden="true"></i> add to
-									cart</a> <a href="#"><i class="fa fa-bookmark fz-16 me-2"
+									cart</a> 
+									
+									<a href="#"><i class="fa fa-bookmark fz-16 me-2"
 									aria-hidden="true"></i>wishlist</a>
 							</div>
 							<div class="product-count">
