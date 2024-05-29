@@ -81,7 +81,33 @@ function addToCart(idProduct) {
 	 
 }
 
+function QuichViewProuduct(idProduct) {
+	var xhttp;
+	 
+	 
 
+		var url = "QuickViewProductController?id=" + idProduct;
+		if (window.XMLHttpRequest) {
+			//code for chrome, firefox, IE7+, Opera, Safari 
+			xhttp = new XMLHttpRequest();
+		} else {
+			// code for IE6, IE5
+			xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+
+		//để theo dõi thay đổi trạng thái của XMLHttpRequest.
+		xhttp.onreadystatechange = function() {// trang thai luon la 4 (4: hoàn hành xử lý và đợi gửi lại phía client)
+			if (xhttp.readyState == 4) { // lay gia tri tu trang result.jsp
+				var data = xhttp.responseText;
+				document.getElementById("quickviewpageproduct").innerHTML = data;
+			}
+		}
+
+		// gui yeu cau Sever/ Ajax reuqest
+		xhttp.open("POST", url, true);
+		xhttp.send();
+	 
+}
 
 </script>
 
@@ -217,20 +243,35 @@ function addToCart(idProduct) {
 											class="img-fluid blur-up lazyload bg-img" alt=""></a>
 									</div>
 									<div class="cart-info cart-wrap">
-										<button data-bs-toggle="modal"  onclick="addToCart(${list.key.getId()})" data-bs-target="#addtocart"
-											title="Add to cart">
-											<i  class="ti-shopping-cart"></i>
+										<button data-bs-toggle="modal"
+											onclick="addToCart(${list.key.getId()})"
+											data-bs-target="#addtocart" title="Add to cart">
+											<i class="ti-shopping-cart"></i>
 										</button>
-										
+
 										<a href="javascript:void(0)" title="Add to Wishlist"> <i
 											class="ti-heart" aria-hidden="true"></i>
-										</a> 
+										</a>
 										
-										<a href="QuickViewProductController?id=${list.key.getId()}" data-bs-toggle="modal"
+										<a onclick="QuichViewProuduct(${list.key.getId()})" href="#" data-bs-toggle="modal"
 											data-bs-target="#quick-view" title="Quick View"> <i
 											class="ti-search" aria-hidden="true"></i>
 										</a> 
 										
+<!--  
+										<a onclick="QuichViewProuduct(${list.key.getId()})" href="#" data-bs-toggle="modal" data-bs-target="#quick-view"
+                                        title="Quick View">
+											<i class="ti-search" aria-hidden="true"></i>
+										</a>
+
+-->
+										<!--
+										<a href="QuickViewProductController?id=${list.key.getId()}" data-bs-toggle="modal"
+   data-bs-target="#quick-view" title="Quick View">
+   <i class="ti-search" aria-hidden="true"></i>
+</a>-->
+
+
 										<a href="compare.html" title="Compare"> <i
 											class="ti-reload" aria-hidden="true"></i>
 										</a>
@@ -316,8 +357,9 @@ function addToCart(idProduct) {
 														class="img-fluid blur-up lazyload bg-img" alt=""></a>
 												</div>
 												<div class="cart-info cart-wrap">
-													<button data-bs-toggle="modal" onclick="addToCart(${listSn.key.getId()})" data-bs-target="#addtocart"
-														title="Add to cart">
+													<button data-bs-toggle="modal"
+														onclick="addToCart(${listSn.key.getId()})"
+														data-bs-target="#addtocart" title="Add to cart">
 														<i class="ti-shopping-cart"></i>
 													</button>
 													<a href="javascript:void(0)" title="Add to Wishlist"><i
@@ -372,8 +414,9 @@ function addToCart(idProduct) {
 														class="img-fluid blur-up lazyload bg-img" alt=""></a>
 												</div>
 												<div class="cart-info cart-wrap">
-													<button data-bs-toggle="modal" onclick="addToCart(${listW.key.getId()})" data-bs-target="#addtocart"
-														title="Add to cart">
+													<button data-bs-toggle="modal"
+														onclick="addToCart(${listW.key.getId()})"
+														data-bs-target="#addtocart" title="Add to cart">
 														<i class="ti-shopping-cart"></i>
 													</button>
 													<a href="javascript:void(0)" title="Add to Wishlist"><i
@@ -427,8 +470,9 @@ function addToCart(idProduct) {
 														class="img-fluid blur-up lazyload bg-img" alt=""></a>
 												</div>
 												<div class="cart-info cart-wrap">
-													<button data-bs-toggle="modal" onclick="addToCart(${lCap.key.getId()})" data-bs-target="#addtocart"
-														title="Add to cart">
+													<button data-bs-toggle="modal"
+														onclick="addToCart(${lCap.key.getId()})"
+														data-bs-target="#addtocart" title="Add to cart">
 														<i class="ti-shopping-cart"></i>
 													</button>
 													<a href="javascript:void(0)" title="Add to Wishlist"><i
@@ -905,80 +949,13 @@ function addToCart(idProduct) {
 
 
 	<!-- Quick-view modal popup start-->
-	
-	
-	
-	<div class="modal fade bd-example-modal-lg theme-modal" id="quick-view"
-		tabindex="-1" role="dialog" aria-hidden="true">
-		<div class="modal-dialog modal-lg modal-dialog-centered"
-			role="document">
-			<div class="modal-content quick-view-modal">
-				<div class="modal-body">
-					<button type="button" class="btn-close" data-bs-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-					<div class="row">
-						<div class="col-lg-6 col-xs-12">
-							<div class="quick-view-img">
-								<img src="../assets/images/pro3/1.jpg" alt=""
-									class="img-fluid blur-up lazyload">
-							</div>
-						</div>
-						<div class="col-lg-6 rtl-text">
-							<div class="product-right">
-								<h2>Women Pink Shirt</h2>
-								<h3>$32.96</h3>
-								<ul class="color-variant">
-									<li class="bg-light0"></li>
-									<li class="bg-light1"></li>
-									<li class="bg-light2"></li>
-								</ul>
-								<div class="border-product">
-									<h6 class="product-title">product details</h6>
-									<p>Sed ut perspiciatis, unde omnis iste natus error sit
-										voluptatem accusantium doloremque laudantium</p>
-								</div>
-								<div class="product-description border-product">
-									<div class="size-box">
-										<ul>
-											<li class="active"><a href="javascript:void(0)">s</a></li>
-											<li><a href="javascript:void(0)">m</a></li>
-											<li><a href="javascript:void(0)">l</a></li>
-											<li><a href="javascript:void(0)">xl</a></li>
-										</ul>
-									</div>
-									<h6 class="product-title">quantity</h6>
-									<div class="qty-box">
-										<div class="input-group">
-											<span class="input-group-prepend"><button
-													type="button" class="btn quantity-left-minus"
-													data-type="minus" data-field="">
-													<i class="ti-angle-left"></i>
-												</button> </span> <input type="text" name="quantity"
-												class="form-control input-number" value="1"> <span
-												class="input-group-prepend"><button type="button"
-													class="btn quantity-right-plus" data-type="plus"
-													data-field="">
-													<i class="ti-angle-right"></i>
-												</button></span>
-										</div>
-									</div>
-								</div>
-								<div class="product-buttons">
-									<a href="#" class="btn btn-solid">add to cart</a> <a href="#"
-										class="btn btn-solid">view detail</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	
-	
+
+
+
+	<div id="quickviewpageproduct"></div>
+
+
+
 	<!-- Quick-view modal popup end-->
 
 
