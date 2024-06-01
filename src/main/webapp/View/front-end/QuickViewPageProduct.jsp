@@ -8,23 +8,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div class="modal fade bd-example-modal-lg theme-modal" id="quick-view"
-		tabindex="-1" role="dialog" aria-hidden="true">
-		<div class="modal-dialog modal-lg modal-dialog-centered"
-			role="document">
-			<div class="modal-content quick-view-modal">
-				<div class="modal-body">
-					<button type="button" class="btn-close" data-bs-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-					<div class="row">
-						<div class="col-lg-6 col-xs-12">
-							<div class="quick-view-img">
-								<img src="../assets/images/pro3/1.jpg" alt=""
-									class="img-fluid blur-up lazyload">
-							</div>
-						</div>
 						<div class="col-lg-6 rtl-text">
 							<div class="product-right">
 								<h2>${productDetail.getName()}</h2>
@@ -71,10 +54,5 @@
 								</div>
 							</div>
 						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 </body>
 </html>

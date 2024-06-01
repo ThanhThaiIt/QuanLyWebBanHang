@@ -252,19 +252,23 @@ function QuichViewProuduct(idProduct) {
 										<a href="javascript:void(0)" title="Add to Wishlist"> <i
 											class="ti-heart" aria-hidden="true"></i>
 										</a>
-										
+										<!--  
 										<a onclick="QuichViewProuduct(${list.key.getId()})" href="#" data-bs-toggle="modal"
 											data-bs-target="#quick-view" title="Quick View"> <i
 											class="ti-search" aria-hidden="true"></i>
 										</a> 
 										
-<!--  
+										 <a
+                                        href="#" data-bs-toggle="modal" data-bs-target="#quick-view"
+                                        title="Quick View"><i class="ti-search" aria-hidden="true"></i></a> 
+										-->
+
 										<a onclick="QuichViewProuduct(${list.key.getId()})" href="#" data-bs-toggle="modal" data-bs-target="#quick-view"
                                         title="Quick View">
 											<i class="ti-search" aria-hidden="true"></i>
 										</a>
 
--->
+
 										<!--
 										<a href="QuickViewProductController?id=${list.key.getId()}" data-bs-toggle="modal"
    data-bs-target="#quick-view" title="Quick View">
@@ -948,12 +952,39 @@ function QuichViewProuduct(idProduct) {
 	<!--modal popup end-->
 
 
-	<!-- Quick-view modal popup start-->
+	<!-- Quick-view modal popup start  <div id="quickviewpageproduct"></div>-->
 
 
 
-	<div id="quickviewpageproduct"></div>
-
+	
+   <div class="modal fade bd-example-modal-lg theme-modal" id="quick-view"
+		tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-lg modal-dialog-centered"
+			role="document">
+			<div class="modal-content quick-view-modal">
+				<div class="modal-body">
+					<button type="button" class="btn-close" data-bs-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<div class="row">
+						<div class="col-lg-6 col-xs-12">
+							<div class="quick-view-img">
+								<img src="../assets/images/pro3/1.jpg" alt=""
+									class="img-fluid blur-up lazyload">
+							</div>
+						</div>
+						
+						
+<div id="quickviewpageproduct"></div>
+						
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
 	<!-- Quick-view modal popup end-->
