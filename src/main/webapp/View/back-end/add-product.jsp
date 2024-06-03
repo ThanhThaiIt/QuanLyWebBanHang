@@ -536,7 +536,7 @@
 														<c:forEach items="${listColorr}" var="lC">
 														<div class="form-check form-check-inline" style="width:70px">
 															<input class="form-check-input" type="checkbox"
-																id="inlineCheckbox1" value="option1"> <label
+																id="inlineCheckbox1" name="color" value="${lC.getId()}"> <label
 																class="form-check-label" for="inlineCheckbox1">${lC.getTitle()}</label>
 														</div>
 														</c:forEach>
@@ -547,8 +547,8 @@
 															class="col-xl-3 col-sm-4 mb-0">Select Size :</label>
 															<c:forEach items="${listSizee}" var="lS">
 														<div class="form-check form-check-inline" style="width:70px">
-															<input class="form-check-input" type="checkbox"
-																id="inlineCheckbox1" value="option1"> <label
+															<input class="form-check-input" type="checkbox" 
+																id="inlineCheckbox1" name="size" value="${lS.getId()}"> <label
 																class="form-check-label" for="inlineCheckbox1">${lS.getTitle()}</label>
 														</div>
 														</c:forEach>
@@ -560,24 +560,24 @@
 														<div class="col-xl-8 col-sm-7">
 															<select class="form-control digits" name="category"
 																id="exampleFormControlSelect5">
-																<option>Men's shirts</option>
-																<option>Men's trousers</option>
-																<option>Men's polo shirt</option>
-																<option>Women's short-sleeved shirt</option>
-																<option>Men's shirts</option>
-																<option>Medium</option>
-																<option>Large</option>
-																<option>Extra Large</option>
-																<option>Men's shirts</option>
-																<option>Medium</option>
-																<option>Large</option>
-																<option>Extra Large</option>
-																<option>Men's shirts</option>
-																<option>Medium</option>
-																<option>Large</option>
-																<option>Extra Large</option>
-																<option>Men's shirts</option>
-																<option>Medium</option>
+																<option value="1">Men's shirts</option>
+																<option value="2">Men's trousers</option>
+																<option value="3">Men's polo shirt</option>
+																<option value="4">Women's short-sleeved shirt</option>
+																<option value="5">Men's short-sleeved shirt</option>
+																<option value="6">Men's jackets</option>
+																<option value="7">Women jacket</option>
+																<option value="8">Men's shorts</option>
+																<option value="9">Women's shorts</option>
+																<option value="10">Men's sports shirt</option>
+																<option value="11">Women's sports shirt</option>
+																<option value="12">Winter T-SHIRT</option>
+																<option value="13">women's polo shirt</option>
+																<option value="14">summer t-shirt</option>
+																<option value="15">Dress</option>
+																<option value="16">Sneakers</option>
+																<option value="17">Luxury Watch</option>
+																<option value="18">Cap</option>
 
 															</select>
 														</div>
@@ -588,10 +588,18 @@
 														<div class="col-xl-8 col-sm-7">
 															<select class="form-control digits" name="supplier"
 																id="exampleFormControlSelect6">
-																<option>Small</option>
-																<option>Medium</option>
-																<option>Large</option>
-																<option>Extra Large</option>
+																<option value="1">Guangzhou Brand</option>
+																<option value="2">Taiwan Brand</option>
+																<option value="3">Vietnam Brand</option>
+																<option value="4">Fest Brand</option>
+																<option value="5">Prada</option>
+																<option value="6">Dior</option>
+																<option value="7">L.B.M 1911</option>
+																<option value="8">ASDAS</option>
+																<option value="9">victor</option>
+																<option value="10">Nike</option>
+																<option value="11">Rolex</option>
+																<option value="12">New Era</option>
 															</select>
 														</div>
 													</div>
@@ -601,9 +609,9 @@
 														<div class="col-xl-8 col-sm-7">
 															<select class="form-control digits" name="status"
 																id="exampleFormControlSelect3">
-																<option>None Active</option>
-																<option>New ProductS</option>
-																<option>Is Active</option>
+																<option value="1">None Active</option>
+																<option value="2">New ProductS</option>
+																<option value="3">Is Active</option>
 
 															</select>
 														</div>
@@ -614,9 +622,9 @@
 														<div class="col-xl-8 col-sm-7">
 															<select class="form-control digits" name="type"
 																id="exampleFormControlSelect4">
-																<option>Best Seller</option>
-																<option>Featured Product</option>
-																<option>None</option>
+																<option value="1">Best Seller</option>
+																<option value="2">Featured Product</option>
+																<option value="3">None</option>
 
 															</select>
 														</div>
@@ -625,7 +633,7 @@
 													<div class="form-group row">
 														<label class="col-xl-3 col-sm-4">Add Description :</label>
 														<div class="col-xl-8 col-sm-7 description-sm">
-															<textarea id="editor1" name="editor1" cols="10" rows="4"></textarea>
+															<textarea id="editor1" name="description" cols="10" rows="4"></textarea>
 														</div>
 													</div>
 												</div>

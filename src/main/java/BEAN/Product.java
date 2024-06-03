@@ -14,6 +14,24 @@ public class Product {
 	private int idStatus;
 	private int idType;
 	private String create_at;
+	
+	
+	public Product(int idSubCategory, int idSupplier, String name, int guarantee, float price, int discount,
+			int quantity, String video, String description, int idStatus, int idType, String create_at) {
+		super();
+		this.idSubCategory = idSubCategory;
+		this.idSupplier = idSupplier;
+		this.name = name;
+		this.guarantee = guarantee;
+		this.price = price;
+		this.discount = discount;
+		this.quantity = quantity;
+		this.video = video;
+		this.description = description;
+		this.idStatus = idStatus;
+		this.idType = idType;
+		this.create_at = create_at;
+	}
 	public Product(int id, int idSubCategory, int idSupplier, String name, int guarantee, float price, int discount,
 			int quantity, String video, String description, int idStatus, int idType, String create_at) {
 		super();
