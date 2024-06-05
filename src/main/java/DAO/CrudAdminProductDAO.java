@@ -12,7 +12,7 @@ import BEAN.Transaction;
 import DB.DBConnection;
 
 public class CrudAdminProductDAO {
-	public static void InserProduct(Product product, int[] lColor, int[] lSize) //dangkydangnhapdungtruefalse
+	public static void InserProduct(Product product, int[] lColor, int[] lSize, List<String> lImage) //dangkydangnhapdungtruefalse
 	{// thuc hien theo buoc huong dan torng slide
 		int key =0;
 		Connection connection = DBConnection.Connection();
@@ -49,7 +49,7 @@ public class CrudAdminProductDAO {
 			    key = rs.getInt(1);
 			}//+
 			
-			InsertImage(key);
+			InsertImage(key,lImage);
 			InsertSize(key, lSize);
 			InsertColor(key, lColor);
 			
@@ -65,7 +65,7 @@ public class CrudAdminProductDAO {
 		 
 	}
 	
-	public static void InsertImage(int keyy) //dangkydangnhapdungtruefalse
+	public static void InsertImage(int keyy, List<String> lImage) //dangkydangnhapdungtruefalse
 	{// thuc hien theo buoc huong dan torng slide
 		
 		Connection connection = DBConnection.Connection();
@@ -82,10 +82,11 @@ public class CrudAdminProductDAO {
 			
 			preparedStatement.setInt(1, keyy);
 			preparedStatement.setString(2, "b");
-			preparedStatement.setString(3, "b");
-			preparedStatement.setString(4, "b");
-			preparedStatement.setString(5, "b");
-			preparedStatement.setString(6, "b");
+			
+			for (int i = 1; i <= lImage.size(); i++) {
+				preparedStatement.setString(i+2, lImage.get(i-1));
+			}
+			
 			
 			
 			preparedStatement.executeUpdate();

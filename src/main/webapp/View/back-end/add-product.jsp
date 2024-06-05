@@ -49,6 +49,19 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
 	crossorigin="anonymous"></script>
+	
+	<script>
+        function loadPreview(input) {
+            var file = input.files[0];
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById('preview').src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
 </head>
 <body>
 
@@ -423,47 +436,45 @@
 								</div>
 								<div class="card-body">
 									<div class="row product-adding">
+									<form action="AddProductController" method="post" enctype='multipart/form-data'
+												class="needs-validation add-product-form" novalidate="">
 										<div class="col-xl-5">
 											<div class="add-product">
 												<div class="row">
 													<div class="col-xl-9 xl-50 col-sm-6 col-9">
-														<img src="${pageContext.request.contextPath}/View/assets/images/pro3/1.jpg" alt=""
+														<img id="preview" src="" alt=""
 															class="img-fluid image_zoom_1 blur-up lazyloaded">
 													</div>
 													<div class="col-xl-3 xl-50 col-sm-6 col-3">
 														<ul class="file-upload-product">
 															<li><div class="box-input-file">
-																	<input class="upload" type="file"><i
+																	<input class="upload" type="file" name="file1" id="fileUpload" onchange="loadPreview(this)"><i
 																		class="fa fa-plus"></i>
 																</div></li>
 															<li><div class="box-input-file">
-																	<input class="upload" type="file"><i
+																	<input class="upload" type="file" name="file2" id="fileUpload" onchange="loadPreview(this)"><i
 																		class="fa fa-plus"></i>
 																</div></li>
 															<li><div class="box-input-file">
-																	<input class="upload" type="file"><i
+																	<input class="upload" type="file" name="file3" id="fileUpload" onchange="loadPreview(this)"><i
 																		class="fa fa-plus"></i>
 																</div></li>
 															<li><div class="box-input-file">
-																	<input class="upload" type="file"><i
+																	<input class="upload" type="file" name="file4" id="fileUpload" onchange="loadPreview(this)"><i
 																		class="fa fa-plus"></i>
 																</div></li>
-															<li><div class="box-input-file">
-																	<input class="upload" type="file"><i
-																		class="fa fa-plus"></i>
-																</div></li>
-															<li><div class="box-input-file">
-																	<input class="upload" type="file"><i
-																		class="fa fa-plus"></i>
-																</div></li>
+																
+															
 														</ul>
 													</div>
 												</div>
 											</div>
 										</div>
+										<br>
 										<div class="col-xl-7">
-											<form action="AddProductController" method="post"
-												class="needs-validation add-product-form" novalidate="">
+										<!-- <form action="AddProductController" method="post"
+												class="needs-validation add-product-form" novalidate=""> -->
+											
 												<div class="form">
 													<div class="form-group mb-3 row">
 														<label for="validationCustom01"
@@ -640,6 +651,7 @@
 												<div class="offset-xl-3 offset-sm-4">
 													<button type="submit" class="btn btn-primary">Add</button>
 													<button type="button" class="btn btn-light">Discard</button>
+												</div>
 												</div>
 											</form>
 										</div>
