@@ -44,9 +44,12 @@ public class LoginGoogleController extends HttpServlet {
 		UserGoogle userGoogle = GoogleLoginDAO.getUserInfo(accessToken);
 		System.out.println(userGoogle);
 		String nameGoogle = GoogleLoginDAO.extractName(userGoogle.toString());
+		
+		int idGoogleint = Integer.parseInt(GoogleLoginDAO.extractSixDigitsId(userGoogle.toString()));
 		System.out.println(nameGoogle);
 		HttpSession session = request.getSession(true);
 		session.setAttribute("ssName", nameGoogle);
+		session.setAttribute("ssID", idGoogleint);
 		RequestDispatcher rd = request.getRequestDispatcher("IndexController");
 		rd.forward(request, response);
 		

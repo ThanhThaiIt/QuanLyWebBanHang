@@ -11,6 +11,8 @@ import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
 import java.io.PrintWriter;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.apache.http.client.ClientProtocolException;
 
@@ -58,5 +60,18 @@ public class GoogleLoginDAO {
 	        }
 	        
 	        return null; // Trả về null nếu không tìm thấy `name`
+	    }
+	 public static String extractSixDigitsId(String input) {
+	        String id = null;
+	        // Regular expression to match the id value with exactly 6 digits
+	        String regex = "id=(\\d{6})";
+	        Pattern pattern = Pattern.compile(regex);
+	        Matcher matcher = pattern.matcher(input);
+
+	        if (matcher.find()) {
+	            id = matcher.group(1); // Extract the first group, which is the 6-digit id value
+	        }
+
+	        return id;
 	    }
 }

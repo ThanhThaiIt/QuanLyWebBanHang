@@ -53,12 +53,62 @@
 
 <script type="text/javascript">
 
-function addToCart(idProduct) {
+/* function addToCart(idProduct) {
 	var xhttp;
 	 
 	 
 
 		var url = "CartController?id=" + idProduct;
+		if (window.XMLHttpRequest) {
+			//code for chrome, firefox, IE7+, Opera, Safari 
+			xhttp = new XMLHttpRequest();
+		} else {
+			// code for IE6, IE5
+			xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+
+		//để theo dõi thay đổi trạng thái của XMLHttpRequest.
+		xhttp.onreadystatechange = function() {// trang thai luon la 4 (4: hoàn hành xử lý và đợi gửi lại phía client)
+			if (xhttp.readyState == 4) { // lay gia tri tu trang result.jsp
+				var data = xhttp.responseText;
+				document.getElementById("cartProduct").innerHTML = data;
+			}
+		}
+
+		// gui yeu cau Sever/ Ajax reuqest
+		xhttp.open("POST", url, true);
+		xhttp.send();
+	 
+} */
+
+var size=-1;
+var color=-1;
+function choiceSize(id){
+	size = id;
+}
+
+function choiceColor(ids){
+	color = ids;
+}
+
+function addToCart(idProduct) {
+	var xhttp;
+/* 	if(size == -1){
+		alert('Vui Long Chọn Size!!! ');
+		return;
+	}
+	
+	if(color == -1){
+		alert('Vui Lòng Chọn Color!!! ');
+		return;
+	} */
+	
+	
+	//var ulElement = document.getElementById("sizee");
+	 
+		//var idSize = ulElement.dataset.id;  
+		//var url = "CartController?id=" + idProduct;
+		var url = "CartController?id=" + idProduct + "&size=" + size + "&color="+color;
 		if (window.XMLHttpRequest) {
 			//code for chrome, firefox, IE7+, Opera, Safari 
 			xhttp = new XMLHttpRequest();

@@ -13,9 +13,9 @@
 								<h2>${productDetail.getName()}</h2>
 								<h3>$${productDetail.getPrice()} </h3>
 								<ul class="color-variant">
-									<li class="bg-light0"></li>
-									<li class="bg-light1"></li>
-									<li class="bg-light2"></li>
+									<c:forEach items="${listColor}" var="list">
+									<li onclick="choiceColor(${list.getId()})" class="${list.getTitle()} "></li>
+								</c:forEach>
 								</ul>
 								<div class="border-product">
 									<h6 class="product-title">product details</h6>
@@ -25,10 +25,10 @@
 								<div class="product-description border-product">
 									<div class="size-box">
 										<ul>
-											<li class="active"><a href="javascript:void(0)">s</a></li>
-											<li><a href="javascript:void(0)">m</a></li>
-											<li><a href="javascript:void(0)">l</a></li>
-											<li><a href="javascript:void(0)">xl</a></li>
+											<c:forEach items="${listSize}" var="list">
+											<li><a onclick="choiceSize(${list.getId()})">${list.getTitle()}</a></li>
+
+										</c:forEach>
 										</ul>
 									</div>
 									<h6 class="product-title">quantity</h6>
@@ -49,7 +49,15 @@
 									</div>
 								</div>
 								<div class="product-buttons">
-									<a href="#" class="btn btn-solid">add to cart</a> <a href="#"
+								<a onclick="addToCart(${productDetail.getId()})"
+									class="btn btn-solid" id="cartEffect"
+									class="btn btn-solid hover-solid btn-animation"><i
+									class="fa fa-shopping-cart me-1" aria-hidden="true"></i> add to
+									cart</a> 
+										<!--  -->
+									
+									
+									<a href="#"
 										class="btn btn-solid">view detail</a>
 								</div>
 							</div>
