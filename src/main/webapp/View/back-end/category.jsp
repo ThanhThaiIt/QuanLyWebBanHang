@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,6 +41,20 @@
 <!-- Bootstrap css-->
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/View/assets/css/vendors/bootstrap.css">
+
+
+
+<!-- Bootstrap 5 CSS -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+<!-- Data Table CSS -->
+<link rel='stylesheet'
+	href='https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css'>
+<!-- Font Awesome CSS -->
+<link rel='stylesheet'
+	href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css'>
+
+
 
 <!-- App css-->
 <link rel="stylesheet" type="text/css"
@@ -218,10 +232,160 @@
 
 
 
-										
+
 									</div>
-									<div id="basicScenario"
-										class="product-physical table-responsive"></div>
+									<!-- <div id="basicScenario"
+										class="product-physical table-responsive"></div> -->
+
+
+
+
+
+
+
+
+									<div class="card-header">
+										<div class="d-flex align-items-center">
+											<h4 class="card-title">Add Row</h4>
+
+										</div>
+									</div>
+									<div class="card-body">
+										<!-- Modal -->
+										<div class="modal fade" id="addRowModal" tabindex="-1"
+											role="dialog" aria-hidden="true">
+											<div class="modal-dialog" role="document">
+												<div class="modal-content">
+													<div class="modal-header border-0">
+														<h5 class="modal-title">
+															<span class="fw-mediumbold"> New</span> <span
+																class="fw-light"> Row </span>
+														</h5>
+														<button type="button" class="close" data-dismiss="modal"
+															aria-label="Close">
+															<span aria-hidden="true">&times;</span>
+														</button>
+													</div>
+													<div class="modal-body">
+														<p class="small">Create a new row using this form,
+															make sure you fill them all</p>
+														<form>
+															<div class="row">
+																<div class="col-sm-12">
+																	<div class="form-group form-group-default">
+																		<label>Name</label> <input id="addName" type="text"
+																			class="form-control" placeholder="fill name" />
+																	</div>
+																</div>
+																<div class="col-md-6 pe-0">
+																	<div class="form-group form-group-default">
+																		<label>Position</label> <input id="addPosition"
+																			type="text" class="form-control"
+																			placeholder="fill position" />
+																	</div>
+																</div>
+																<div class="col-md-6">
+																	<div class="form-group form-group-default">
+																		<label>Office</label> <input id="addOffice"
+																			type="text" class="form-control"
+																			placeholder="fill office" />
+																	</div>
+																</div>
+															</div>
+														</form>
+													</div>
+													<div class="modal-footer border-0">
+														<button type="button" id="addRowButton"
+															class="btn btn-primary">Add</button>
+														<button type="button" class="btn btn-danger"
+															data-dismiss="modal">Close</button>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="table-responsive">
+											<table id="add-row"
+												class="display table table-striped table-hover">
+												<thead>
+													<tr>
+														<th>#</th>
+														<th>Image</th>
+														<th>Name</th>
+														<th>Guarantee</th>
+														<th>Price</th>
+														<th>Discount</th>
+														<th>Quantity</th>
+														<th>Description</th>
+														<th style="width: 10%">Action</th>
+													</tr>
+												</thead>
+												<tfoot>
+													<tr>
+														<th>#</th>
+														<th>Image</th>
+														<th>Name</th>
+														<th>Guarantee</th>
+														<th>Price</th>
+														<th>Discount</th>
+														<th>Quantity</th>
+														<th>Price</th>
+														<th>Description</th>
+													</tr>
+												</tfoot>
+												<tbody>
+
+													<c:forEach var="product" items="${listProduct}">
+														<tr>
+															<th scope="row">${listProduct.indexOf(product) + 1}</th>
+															<td><img src="${product.getUrlImg1()}" alt="Image"
+																style="width: 50px; height: 50px;"> <!-- Thêm ảnh vào đây -->
+															</td>
+															<td>${product.getName()}</td>
+															<td>${product.getGuarantee()}</td>
+															<td>${product.getPrice()}</td>
+															<td>${product.getDiscount()}</td>
+															<td>${product.getQuantity()}</td>
+															<td>${product.getSumaryDescription()}</td>
+
+															<td>
+																<div class="form-button-action">
+
+																	<!-- <button type="button" data-bs-toggle="tooltip" title=""
+																	class="btn btn-link btn-primary btn-lg"
+																	data-original-title="Edit Task">
+																	<i class="fa fa-edit"></i>
+																</button>
+																<button type="button" data-bs-toggle="tooltip" title=""
+																	class="btn btn-link btn-danger"
+																	data-original-title="Remove">
+																	<i class="fa fa-times"></i>
+																</button> -->
+
+
+
+																	<a href="EditProductControllerBE?id=${product.getId()}"
+																		class="btn btn-link btn-primary btn-lg"
+																		data-bs-toggle="tooltip" title=""
+																		data-original-title="Edit Task"> <i
+																		class="fa fa-edit"></i>
+																	</a> <a href="DeleteControllerBE?id=${product.getId()}"
+																		class="btn btn-link btn-danger"
+																		data-bs-toggle="tooltip" title=""
+																		data-original-title="Remove"> <i
+																		class="fa fa-times"></i>
+																	</a>
+																</div>
+															</td>
+														</tr>
+													</c:forEach>
+												</tbody>
+											</table>
+										</div>
+									</div>
+
+
+
 								</div>
 							</div>
 						</div>
@@ -236,7 +400,7 @@
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col-md-6 footer-copyright">
-							<p class="mb-0">Copyright 2019 © Multikart All rights
+							<p class="mb-0">Copyright 2019 Â© Multikart All rights
 								reserved.</p>
 						</div>
 						<div class="col-md-6">

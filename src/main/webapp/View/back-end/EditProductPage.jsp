@@ -10,8 +10,8 @@
     <meta name="description" content="multikart">
     <meta name="keywords" content="multikart">
     <meta name="author" content="multikart">
-    <link rel="icon" href="../assets/images/favicon/1.png" type="image/x-icon" />
-    <link rel="shortcut icon" href="../assets/images/favicon/1.png" type="image/x-icon" />
+    <link rel="icon" href="${pageContext.request.contextPath}/View/assets/images/favicon/1.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/View/assets/images/favicon/1.png" type="image/x-icon" />
     <title>Multikart - Multi-purpopse E-commerce Html Template</title>
 
     <!--Google font-->
@@ -20,23 +20,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
 
     <!-- Icons -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/fontawesome.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/View/assets/css/vendors/fontawesome.css">
 
     <!--Slick slider css-->
-    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/slick.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/slick-theme.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/View/assets/css/vendors/slick.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/View/assets/css/vendors/slick-theme.css">
 
     <!-- Animate icon -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/animate.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/View/assets/css/vendors/animate.css">
 
     <!-- Themify icon -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/themify-icons.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/View/assets/css/vendors/themify-icons.css">
 
     <!-- Bootstrap css -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/View/assets/css/vendors/bootstrap.css">
 
     <!-- Theme css -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/View/assets/css/style.css">
 
 
 </head>
@@ -133,7 +133,7 @@
                                                             </div>
                                                             <div class="col-xl-4"><a href="#"
                                                                     class="mega-menu-banner"><img
-                                                                        src="../assets/images/mega-menu/fashion.jpg"
+                                                                        src="${pageContext.request.contextPath}/View/assets/images/mega-menu/fashion.jpg"
                                                                         alt="" class="img-fluid blur-up lazyload"></a>
                                                             </div>
                                                         </div>
@@ -226,7 +226,7 @@
                                     </nav>
                                 </div>
                             </div>
-                            <div class="brand-logo"><a href="index.html"><img src="../assets/images/icon/logo.png"
+                            <div class="brand-logo"><a href="index.html"><img src="${pageContext.request.contextPath}/View/assets/images/icon/logo.png"
                                         class="img-fluid blur-up lazyload" alt=""></a></div>
                         </div>
                         <div class="menu-right pull-right">
@@ -361,16 +361,16 @@
                                                                     <div class="menu-content">
                                                                         <ul>
                                                                             <li><a target="_blank"
-                                                                                    href="../email-template/email-order-success.html">order
+                                                                                    href="${pageContext.request.contextPath}/View/email-template/email-order-success.html">order
                                                                                     success</a></li>
                                                                             <li><a target="_blank"
-                                                                                    href="../email-template/email-order-success-two.html">order
+                                                                                    href="${pageContext.request.contextPath}/View/email-template/email-order-success-two.html">order
                                                                                     success 2</a></li>
                                                                             <li><a target="_blank"
-                                                                                    href="../email-template/email-template.html">email
+                                                                                    href="${pageContext.request.contextPath}/View/email-template/email-template.html">email
                                                                                     template</a></li>
                                                                             <li><a target="_blank"
-                                                                                    href="../email-template/email-template-two.html">email
+                                                                                    href="${pageContext.request.contextPath}/View/email-template/email-template-two.html">email
                                                                                     template 2</a></li>
                                                                         </ul>
                                                                     </div>
@@ -391,7 +391,7 @@
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-12">
-                                                                <img src="../assets/images/menu-banner.jpg"
+                                                                <img src="${pageContext.request.contextPath}/View/assets/images/menu-banner.jpg"
                                                                     class="img-fluid mega-img">
                                                             </div>
                                                         </div>
@@ -559,7 +559,7 @@
                                 <div class="icon-nav">
                                     <ul>
                                         <li class="onhover-div mobile-search">
-                                            <div><img src="../assets/images/icon/search.png" onclick="openSearch()"
+                                            <div><img src="${pageContext.request.contextPath}/View/assets/images/icon/search.png" onclick="openSearch()"
                                                     class="img-fluid blur-up lazyload" alt=""> <i class="ti-search"
                                                     onclick="openSearch()"></i></div>
                                             <div id="search-overlay" class="search-overlay">
@@ -586,7 +586,7 @@
                                             </div>
                                         </li>
                                         <li class="onhover-div mobile-setting">
-                                            <div><img src="../assets/images/icon/setting.png"
+                                            <div><img src="${pageContext.request.contextPath}/View/assets/images/icon/setting.png"
                                                     class="img-fluid blur-up lazyload" alt=""> <i
                                                     class="ti-settings"></i></div>
                                             <div class="show-div setting">
@@ -605,14 +605,14 @@
                                             </div>
                                         </li>
                                         <li class="onhover-div mobile-cart">
-                                            <div><img src="../assets/images/icon/cart.png"
+                                            <div><img src="${pageContext.request.contextPath}/View/assets/images/icon/cart.png"
                                                     class="img-fluid blur-up lazyload" alt=""> <i
                                                     class="ti-shopping-cart"></i></div>
                                             <ul class="show-div shopping-cart">
                                                 <li>
                                                     <div class="media">
                                                         <a href="#"><img class="me-3"
-                                                                src="../assets/images/fashion/product/1.jpg"
+                                                                src="${pageContext.request.contextPath}/View/assets/images/fashion/product/1.jpg"
                                                                 alt="Generic placeholder image"></a>
                                                         <div class="media-body">
                                                             <a href="#">
@@ -627,7 +627,7 @@
                                                 <li>
                                                     <div class="media">
                                                         <a href="#"><img class="me-3"
-                                                                src="../assets/images/fashion/product/2.jpg"
+                                                                src="${pageContext.request.contextPath}/View/assets/images/fashion/product/2.jpg"
                                                                 alt="Generic placeholder image"></a>
                                                         <div class="media-body">
                                                             <a href="#">
@@ -690,32 +690,45 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <h3>PERSONAL DETAIL</h3>
-                    <form class="theme-form">
+                    <h3>EDIT PRODUCT</h3>
+                    <form class="theme-form" action="EditProductControllerBE" method="post">
                         <div class="form-row row">
+                        <input type="hidden" name="id" value="${ProductEdit.id}">
                             <div class="col-md-6">
-                                <label for="name">First Name</label>
-                                <input type="text" class="form-control" id="name" placeholder="Enter Your name"
+                                <label for="name">Product Name</label>
+                                <input type="text" class="form-control" id="name" name="ProductName" value="${ProductEdit.getName()}" placeholder="Enter Your name"
+                                    required="">
+                            </div>    
+                            <div class="col-md-6">
+                                <label for="name">Guarantee</label>
+                                <input type="text" class="form-control" id="last-name" name="Guarantee" value="${ProductEdit.getGuarantee()}" placeholder="Email" required="">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="name">Price</label>
+                                <input type="text" class="form-control" name="Price" id="review" value="${ProductEdit.getPrice()}" placeholder="Enter your number"
                                     required="">
                             </div>
                             <div class="col-md-6">
-                                <label for="email">Last Name</label>
-                                <input type="text" class="form-control" id="last-name" placeholder="Email" required="">
+                                <label for="name">Discount</label>
+                                <input type="text" class="form-control" id="email" name="Discount" value="${ProductEdit.getDiscount()}" placeholder="Email" required="">
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="name">Quantity</label>
+                                <input type="text" class="form-control" id="email" name="Quantity" value="${ProductEdit.getQuantity()}" placeholder="Email" required="">
                             </div>
                             <div class="col-md-6">
-                                <label for="review">Phone number</label>
-                                <input type="text" class="form-control" id="review" placeholder="Enter your number"
-                                    required="">
-                            </div>
-                            <div class="col-md-6">
-                                <label for="email">Email</label>
-                                <input type="text" class="form-control" id="email" placeholder="Email" required="">
+                                <label for="name">Video</label>
+                                <input type="text" class="form-control" id="email" name="Video" value="${ProductEdit.getVideo()}" placeholder="Email" required="">
                             </div>
                             <div class="col-md-12">
-                                <label for="review">Write Your Message</label>
-                                <textarea class="form-control mb-0" placeholder="Write Your Message"
-                                    id="exampleFormControlTextarea1" rows="6"></textarea>
+    <label for="exampleFormControlTextarea1">Description</label>
+    <textarea class="form-control mb-0" placeholder="Write Your Message" id="exampleFormControlTextarea1" name="description" rows="6">${ProductEdit.getDescription()}</textarea>
+</div>
+ <div class="col-md-12">
+                                <button class="btn btn-sm btn-solid" type="submit">Save setting</button>
                             </div>
+                            
                         </div>
                     </form>
                 </div>
@@ -725,7 +738,7 @@
     <!-- Section ends -->
 
 
-    <!-- address section start -->
+    <!-- address section start 
     <section class="contact-page register-page section-b-space">
         <div class="container">
             <div class="row">
@@ -774,7 +787,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
     <!-- Section ends -->
 
 
@@ -814,7 +827,7 @@
                             <h4>about</h4>
                         </div>
                         <div class="footer-contant">
-                            <div class="footer-logo"><img src="../assets/images/icon/logo.png" alt=""></div>
+                            <div class="footer-logo"><img src="${pageContext.request.contextPath}/View/assets/images/icon/logo.png" alt=""></div>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                                 ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
                             <div class="footer-social">
@@ -891,11 +904,11 @@
                     <div class="col-xl-6 col-md-6 col-sm-12">
                         <div class="payment-card-bottom">
                             <ul>
-                                <li><a href="#"><img src="../assets/images/icon/visa.png" alt=""></a></li>
-                                <li><a href="#"><img src="../assets/images/icon/mastercard.png" alt=""></a></li>
-                                <li><a href="#"><img src="../assets/images/icon/paypal.png" alt=""></a></li>
-                                <li><a href="#"><img src="../assets/images/icon/american-express.png" alt=""></a></li>
-                                <li><a href="#"><img src="../assets/images/icon/discover.png" alt=""></a></li>
+                                <li><a href="#"><img src="${pageContext.request.contextPath}/View/assets/images/icon/visa.png" alt=""></a></li>
+                                <li><a href="#"><img src="${pageContext.request.contextPath}/View/assets/images/icon/mastercard.png" alt=""></a></li>
+                                <li><a href="#"><img src="${pageContext.request.contextPath}/View/assets/images/icon/paypal.png" alt=""></a></li>
+                                <li><a href="#"><img src="${pageContext.request.contextPath}/View/assets/images/icon/american-express.png" alt=""></a></li>
+                                <li><a href="#"><img src="${pageContext.request.contextPath}/View/assets/images/icon/discover.png" alt=""></a></li>
                             </ul>
                         </div>
                     </div>
@@ -938,7 +951,7 @@
                 <div class="setting-body">
                     <div class="setting-title">
                         <div>
-                            <img src="../assets/images/icon/logo.png" class="img-fluid" alt="">
+                            <img src="${pageContext.request.contextPath}/View/assets/images/icon/logo.png" class="img-fluid" alt="">
                             <h3>50+ <span>demos</span> <br> suit for any type of online store.</h3>
                         </div>
                     </div>
@@ -947,7 +960,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="gradient.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/gradient.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/gradient.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="gradient.html" class="demo-text">
@@ -958,7 +971,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="index.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/fashion.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/fashion.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="index.html" class="demo-text">
@@ -969,7 +982,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="fashion-2.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/fashion-2.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/fashion-2.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="fashion-2.html" class="demo-text">
@@ -980,7 +993,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="fashion-3.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/fashion-3.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/fashion-3.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="fashion-3.html" class="demo-text">
@@ -991,7 +1004,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="fashion-4.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/fashion-4.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/fashion-4.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="fashion-4.html" class="demo-text">
@@ -1002,7 +1015,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="fashion-5.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/fashion-5.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/fashion-5.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="fashion-5.html" class="demo-text">
@@ -1013,7 +1026,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="fashion-6.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/fashion-6.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/fashion-6.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="fashion-6.html" class="demo-text">
@@ -1024,7 +1037,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="fashion-7.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/fashion-7.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/fashion-7.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="fashion-7.html" class="demo-text">
@@ -1035,7 +1048,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="furniture.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/furniture.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/furniture.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="furniture.html" class="demo-text">
@@ -1046,7 +1059,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="furniture-2.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/furniture-2.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/furniture-2.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="furniture-2.html" class="demo-text">
@@ -1057,7 +1070,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="furniture-3.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/furniture-dark.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/furniture-dark.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="furniture-3.html" class="demo-text">
@@ -1068,7 +1081,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="electronic-1.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/electronics.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/electronics.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="electronic-1.html" class="demo-text">
@@ -1079,7 +1092,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="electronic-2.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/electronics-2.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/electronics-2.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="electronic-2.html" class="demo-text">
@@ -1090,7 +1103,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="electronic-3.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/electronics-3.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/electronics-3.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="electronic-3.html" class="demo-text">
@@ -1101,7 +1114,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="marketplace-demo.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/marketplace.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/marketplace.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="marketplace-demo.html" class="demo-text">
@@ -1112,7 +1125,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="marketplace-demo-2.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/marketplace-2.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/marketplace-2.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="marketplace-demo-2.html" class="demo-text">
@@ -1123,7 +1136,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="marketplace-demo-3.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/marketplace-3.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/marketplace-3.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="marketplace-demo-3.html" class="demo-text">
@@ -1134,7 +1147,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="marketplace-demo-4.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/marketplace-4.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/marketplace-4.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="marketplace-demo-4.html" class="demo-text">
@@ -1145,7 +1158,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="vegetables.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/vegetables.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/vegetables.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="vegetables.html" class="demo-text">
@@ -1156,7 +1169,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="vegetables-2.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/vegetables-2.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/vegetables-2.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="vegetables-2.html" class="demo-text">
@@ -1167,7 +1180,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="vegetables-3.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/vegetables-3.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/vegetables-3.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="vegetables-3.html" class="demo-text">
@@ -1178,7 +1191,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="jewellery.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/jewellery.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/jewellery.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="jewellery.html" class="demo-text">
@@ -1189,7 +1202,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="jewellery-2.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/jewellery-2.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/jewellery-2.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="jewellery-2.html" class="demo-text">
@@ -1200,7 +1213,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="jewellery-3.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/jewellery-3.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/jewellery-3.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="jewellery-3.html" class="demo-text">
@@ -1211,7 +1224,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="bags.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/bag.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/bag.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="bags.html" class="demo-text">
@@ -1222,7 +1235,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="watch.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/watch.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/watch.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="watch.html" class="demo-text">
@@ -1233,7 +1246,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="medical.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/medical.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/medical.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="medical.html" class="demo-text">
@@ -1244,7 +1257,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="perfume.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/perfume.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/perfume.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="perfume.html" class="demo-text">
@@ -1255,7 +1268,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="yoga.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/yoga.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/yoga.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="yoga.html" class="demo-text">
@@ -1266,7 +1279,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="christmas.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/christmas.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/christmas.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="christmas.html" class="demo-text">
@@ -1277,7 +1290,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="bicycle.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/bicycle.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/bicycle.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="bicycle.html" class="demo-text">
@@ -1288,7 +1301,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="marijuana.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/marijuana.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/marijuana.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="marijuana.html" class="demo-text">
@@ -1299,7 +1312,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="gym-product.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/gym.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/gym.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="gym-product.html" class="demo-text">
@@ -1310,7 +1323,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="tools.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/tools.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/tools.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="tools.html" class="demo-text">
@@ -1321,7 +1334,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="shoes.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/shoes.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/shoes.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="shoes.html" class="demo-text">
@@ -1332,7 +1345,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="books.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/books.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/books.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="books.html" class="demo-text">
@@ -1343,7 +1356,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="kids.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/kids.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/kids.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="kids.html" class="demo-text">
@@ -1354,7 +1367,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="game.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/game.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/game.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="game.html" class="demo-text">
@@ -1365,7 +1378,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="beauty.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/beauty.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/beauty.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="beauty.html" class="demo-text">
@@ -1376,7 +1389,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="left_sidebar-demo.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/left-sidebar.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/left-sidebar.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="left_sidebar-demo.html" class="demo-text">
@@ -1387,7 +1400,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="video-slider.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/video-slider.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/video-slider.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="video-slider.html" class="demo-text">
@@ -1398,7 +1411,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="metro.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/metro.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/metro.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="metro.html" class="demo-text">
@@ -1409,7 +1422,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="goggles.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/goggles.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/goggles.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="goggles.html" class="demo-text">
@@ -1420,7 +1433,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="flower.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/flower.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/flower.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="flower.html" class="demo-text">
@@ -1431,7 +1444,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="light.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/light.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/light.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="light.html" class="demo-text">
@@ -1442,7 +1455,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="nursery.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/nursery.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/nursery.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="nursery.html" class="demo-text">
@@ -1453,7 +1466,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="pets.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/pets.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/pets.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="pets.html" class="demo-text">
@@ -1464,7 +1477,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="video.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/video.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/video.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="video.html" class="demo-text">
@@ -1475,7 +1488,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="lookbook-demo.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/lookbook.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/lookbook.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="lookbook-demo.html" class="demo-text">
@@ -1486,7 +1499,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="full-page.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/full-page.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/full-page.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="full-page.html" class="demo-text">
@@ -1497,7 +1510,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="instagram-shop.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/instagram.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/instagram.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="instagram-shop.html" class="demo-text">
@@ -1508,7 +1521,7 @@
                             <div class="col-md-4 col-6 text-center demo-effects">
                                 <div class="set-position">
                                     <a href="parallax.html" class="layout-container">
-                                        <img src="../assets/images/landing-page/demo/parallax.jpg"
+                                        <img src="${pageContext.request.contextPath}/View/assets/images/landing-page/demo/parallax.jpg"
                                             class="img-fluid bg-img bg-top" alt="">
                                     </a>
                                     <a href="parallax.html" class="demo-text">
@@ -1535,26 +1548,26 @@
 
 
     <!-- latest jquery-->
-    <script src="../assets/js/jquery-3.3.1.min.js"></script>
+    <script src="${pageContext.request.contextPath}/View/assets/js/jquery-3.3.1.min.js"></script>
 
     <!-- menu js-->
-    <script src="../assets/js/menu.js"></script>
+    <script src="${pageContext.request.contextPath}/View/assets/js/menu.js"></script>
 
     <!-- lazyload js-->
-    <script src="../assets/js/lazysizes.min.js"></script>
+    <script src="${pageContext.request.contextPath}/View/assets/js/lazysizes.min.js"></script>
 
     <!-- slick js-->
-    <script src="../assets/js/slick.js"></script>
+    <script src="${pageContext.request.contextPath}/View/assets/js/slick.js"></script>
 
     <!-- Bootstrap js-->
-    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="${pageContext.request.contextPath}/View/assets/js/bootstrap.bundle.min.js"></script>
 
     <!-- Bootstrap Notification js-->
-    <script src="../assets/js/bootstrap-notify.min.js"></script>
+    <script src="${pageContext.request.contextPath}/View/assets/js/bootstrap-notify.min.js"></script>
 
     <!-- Theme js-->
-    <script src="../assets/js/theme-setting.js"></script>
-    <script src="../assets/js/script.js"></script>
+    <script src="${pageContext.request.contextPath}/View/assets/js/theme-setting.js"></script>
+    <script src="${pageContext.request.contextPath}/View/assets/js/script.js"></script>
 
     <script>
         function openSearch() {

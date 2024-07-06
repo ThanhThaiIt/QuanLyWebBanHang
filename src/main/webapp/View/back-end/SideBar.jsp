@@ -32,7 +32,7 @@
 						data-feather="box"></i> <span>Products</span><i
 						class="fa fa-angle-right pull-right"></i></a>
 					<ul class="sidebar-submenu">
-						<li><a href="${pageContext.request.contextPath}/View/back-end/category.jsp"><i class="fa fa-circle"></i> <span>Product List</span>
+						<li><a href="${pageContext.request.contextPath}/ProductCategoryController"><i class="fa fa-circle"></i> <span>Product List</span>
 								<i class="fa fa-angle-right pull-right"></i> </a>
 							</li>
 						<li><a href="#"><i class="fa fa-circle"></i> <span>Digital</span>
